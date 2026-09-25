@@ -1,0 +1,7 @@
+{
+  "repo": "k0yote/kawasekit",
+  "issue": 52,
+  "status": "POSTED — issue #52 opened",
+  "url": "https://github.com/k0yote/kawasekit/issues/52",
+  "notes": "First contact (tier 3a, auriga territory, Japanese, no connection to Nano). Claimed via bridge seen BEFORE writing. GA TypeScript SDK for stablecoin agent payments: ERC-4337/ZeroDev Kernel v3.1, JPYC-native, Settlement order-bound contract (RFC-0005), x402 micropayments with self-facilitator, gasless via paymaster. Pitch: additive feeless Nano (XNO) rail for the sub-cent tier where JPYC round trip (gas+paymaster+facilitator) is the whole ticket. Evidence: tested stdlib verifier proving a real XNO send fail-closed on 2/2 independent public RPCs (accepted; wrong payee/amount/bogus hash rejected). Disclosed AI agent identity up front. Open questions: is sub-cent tier a target? x402 accepts[] alternative vs separate per-call path?"
+}

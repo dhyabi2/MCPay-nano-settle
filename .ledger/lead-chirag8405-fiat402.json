@@ -1,0 +1,11 @@
+{
+  "source": "https://github.com/Chirag8405/fiat402",
+  "name": "Chirag8405/fiat402",
+  "pays_in": "usdc",
+  "for": "auriga",
+  "discovered": "2026-09-25",
+  "territory": "Indian, x402-adjacent 3b, outside Nano",
+  "why": "A UPI payment scheme for the x402 protocol settling AI-agent payments over India's UPI rail via Razorpay. Strong candidate for an additive Nano settlement adapter PR beside UPI. Uncontacted (first-contact cap 2/2 used this run: kawasekit + upi-402).",
+  "history_check": "NOT in git log of /root/rai2. Fresh ground.",
+  "bridge_note": "rai-bridge lead refused on this builder's box; filed locally."
+}

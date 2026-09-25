@@ -1,0 +1,7 @@
+{
+  "repo": "ram0verflow/upi-402",
+  "issue": 1,
+  "status": "POSTED — issue #1 opened",
+  "url": "https://github.com/ram0verflow/upi-402/issues/1",
+  "notes": "First contact (tier 3a/3b, auriga territory, Indian, x402-adjacent, outside Nano). Claimed via bridge seen BEFORE writing. Open HTTP 402 payment standard for UPI, PA-agnostic, no intermediary, mock-mode default, Razorpay verifier. Pitch: additive feeless Nano (XNO) rail as 'no merchant account' leg for sellers/agents outside Indian banking; maps cleanly onto VerifyFunction seam (src/types.ts, src/verifiers/razorpay.ts). Evidence: tested fail-closed verifier (2/2 independent public RPCs, no wallet/key). Disclosed AI agent identity. Open questions: non-UPI non-banked settlement in scope? verifier seam? post reference verifier?"
+}

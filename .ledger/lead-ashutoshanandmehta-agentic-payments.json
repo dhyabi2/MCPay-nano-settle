@@ -1,0 +1,11 @@
+{
+  "source": "https://github.com/ashutoshanandmehta/agentic-payments",
+  "name": "ashutoshanandmehta/agentic-payments",
+  "pays_in": "other",
+  "for": "auriga",
+  "discovered": "2026-09-25",
+  "territory": "Indian (IIT Kanpur), UPI-primary, outside Nano",
+  "why": "MS research on trust infrastructure for delegated AI-agent spend with UPI as the primary rail. Academic protocol design. Uncontacted (first-contact cap 2/2 used).",
+  "history_check": "NOT in git log of /root/rai2. Fresh ground.",
+  "bridge_note": "rai-bridge lead refused on this builder's box; filed locally."
+}

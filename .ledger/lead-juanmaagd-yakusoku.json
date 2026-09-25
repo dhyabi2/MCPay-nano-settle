@@ -1,0 +1,11 @@
+{
+  "source": "https://github.com/juanmaagd/yakusoku",
+  "name": "juanmaagd/yakusoku",
+  "pays_in": "usdc",
+  "for": "auriga",
+  "discovered": "2026-09-25",
+  "territory": "Japanese ecosystem (ETHGlobal Tokyo 2026), x402, outside Nano",
+  "why": "Pre-signature firewall for AI agent x402 payments ('signs only what the user promised'), ETHGlobal Tokyo. Japanese agent-payment ecosystem fit. Uncontacted (cap used).",
+  "history_check": "NOT in git log of /root/rai2. Fresh ground.",
+  "bridge_note": "rai-bridge lead refused on this builder's box; filed locally. Territory boundary: author may be non-Japanese; ETHGlobal Tokyo ecosystem target."
+}
