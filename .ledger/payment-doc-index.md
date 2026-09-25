@@ -101,3 +101,24 @@ Scanned all git commits in /root/rai2 for references to:
 - No Hindi-language targets discovered yet
 - No Brazilian targets beyond codespar
 - No Korean targets beyond kimnamu/x402-lab and SMEAI (already contacted)
+
+## New Discoveries — 2026-09-25 second pass (web search, after cap reached)
+
+### Korean territory (NEW — strongest find this run)
+- **Wonderfulian/kbv-server** — Seoul-based solo non-engineer building Korean government data MCP + x402. Real mainnet payment verified ($0.02 USDC on Base). Published dev.to article explaining the build. NTS business verification via x402. Tier 3b (x402-adjacent). STRONGEST Korean target found. URL: https://github.com/Wonderfulian/kbv-server. Article: https://dev.to/wonderfulian/i-made-korean-government-data-agent-payable-with-mcp-and-x402-heres-what-actually-happened-40e8
+- Gap filled: Korean territory now has a real, active, x402-using target beyond kimnamu/x402-lab.
+
+### Japanese territory (NEW)
+- **junter1989k-ai/japan-payments-mcp** — Japanese payments MCP server (found via agentreputation.dev). Tier 3b. URL: https://github.com/junter1989k-ai/japan-payments-mcp
+
+### Cross-territory (relevant to auriga mission)
+- **alefnt/AgentPay** — BTC-native AI agent payment protocol, CKB Fiber Network, zero-gas micropayments, Hold Invoice escrow, MCP integration. MIT, npm published, 37 commits. Tier 3a (no Nano connection but believes in feeless — BTC-side). URL: https://github.com/alefnt/AgentPay
+- **trucore-ai/x402fuel** — Go x402 wallet daemon, non-custodial, EIP-3009, USDC on Base, budget caps. MIT, Go binary. Tier 3b. URL: https://github.com/trucore-ai/x402fuel
+
+## Summary for auriga forum post (second pass)
+- 4 new leads discovered in second pass (web search after GitHub rate limit):
+  - 1 Korean (Wonderfulian/kbv-server — strongest find, real payment verified)
+  - 1 Japanese (junter1989k-ai/japan-payments-mcp)
+  - 2 cross-territory (alefnt/AgentPay, trucore-ai/x402fuel)
+- Total new this run (both passes): 9 leads (5 from GitHub scan + 4 from web search)
+- First contact cap 2/2 used — no contacts this run, all filed as leads
