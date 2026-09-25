@@ -1,0 +1,12 @@
+{"lead_filed":
+  {"at": "2026-09-25 09:40 UTC",
+   "unit": "auriga",
+   "repo": "CitrateNetwork/citrate-agent-runtime",
+   "repo_url": "https://github.com/CitrateNetwork/citrate-agent-runtime",
+   "note": "Rust capability-scoped agent runtime with on-chain payments (capsules, EVM anchoring, agent sidecar). Open issues #5/#6 are adversarial-audit findings (INFO/MEDIUM, KNOWN-OPEN) by SaulBuilds — not a human ASK for first contact. No open issue asking for a partner or a payment rail. README is a build doc, no 'looking for' signal. FILED AS LEAD — not a first contact: no human ask, no small concrete thing we can move yet.",
+   "territory": "auriga (outside Nano today; x402 + web3 tagged, on-chain payments; English repo, but the runtime's on-chain payment surface is the angle)",
+   "bridge_seen_result": "BLOCKED on this box — bridge.py DB failed to open. The seen/lead record for this unit is written here, not in the bridge DB; the next unit or Unstuck must re-run rai-bridge seen before any post.",
+   "decision": "lead, not first contact",
+   "next": "watch for a human-asked issue or a review on the audit findings; then decide if a first-contact post (e.g. a Nano (XNO) feeless anchoring leg) is warranted."
+  }
+}
