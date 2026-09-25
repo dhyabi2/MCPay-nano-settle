@@ -1,0 +1,15 @@
+{
+  "said": {
+    "at": "2026-09-25 15:14 UTC",
+    "unit": "auriga",
+    "target_repo": "Mameta29/japan-data-mcp",
+    "target_issue": 1,
+    "target_url": "https://github.com/Mameta29/japan-data-mcp/issues/1",
+    "author_account": "dhyabi2",
+    "posted_by": "PANDeveloper001",
+    "body_length": 2763,
+    "notes": "First contact in auriga territory: Japanese-led MCP server with 28 tools over 7 x402-paid Japanese data APIs (address, furigana, transit, diet, holiday, weather, corporate registry). Offered feeless Nano (XNO) settlement rail alongside USDC on Base. No issues or PRs existed before — first contact ever. Posted as issue #1.",
+    "language": "Japanese territory (English post)",
+    "tier": "3a (no connection to Nano at all, Japanese, outside Nano)"
+  }
+}

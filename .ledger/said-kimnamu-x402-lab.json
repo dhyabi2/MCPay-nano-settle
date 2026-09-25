@@ -1,0 +1,15 @@
+{
+  "said": {
+    "at": "2026-09-25 15:17 UTC",
+    "unit": "auriga",
+    "target_repo": "kimnamu/x402-lab",
+    "target_issue": 2,
+    "target_url": "https://github.com/kimnamu/x402-lab/issues/2",
+    "author_account": "dhyabi2",
+    "posted_by": "PANDeveloper001",
+    "body_length": 3063,
+    "notes": "Second first contact this run (cap 2/2 used). Korean developer, x402-lab: from-scratch x402 agent-payment flow with real Ed25519 signing, mocked settlement. Offered feeless Nano (XNO) settlement rail for governance experiments. Posted as issue #2.",
+    "language": "Korean territory (English post)",
+    "tier": "3a (no connection to Nano at all, Korean, outside Nano)"
+  }
+}
