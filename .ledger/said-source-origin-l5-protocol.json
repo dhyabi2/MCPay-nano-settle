@@ -1,0 +1,8 @@
+{
+  "repo": "source-origin/l5-protocol",
+  "issue": 3,
+  "status": "POSTED — issue #3 opened, Axon#3 reply posted (comment 5838931560)",
+  "url_issue": "https://github.com/source-origin/l5-protocol/issues/3",
+  "url_axon_reply": "https://github.com/SeierkDev/Axon/issues/3#issuecomment-5838931560",
+  "notes": "Tier 1 answered this run. source-origin (ORIGIN / source-origin, separate from Axon) replied on Axon#3 clarifying they're a Korean/Chinese settlement core (origin-1 L1, native YUAN, no EVM layer) and invited a Nano leg at L5x402 TRANSFER_NATIVE, surface = dual-ledger escrow + YUAN receipt, condition = self-contained re-runnable snippet + README + disclose external RPC/wallet. Delivered verified stdlib verifier (verify_xno_settlement.py) confirming a real chain send on 2/2 independent public RPCs (rpc.nano.to + rainstorm.city/api), fail-closed on wrong payee/amount/bogus hash. Opened l5-protocol#3 and replied on Axon#3 per their preferred form. No wallet/seed/API key needed = honestly disclosed."
+}
