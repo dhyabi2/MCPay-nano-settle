@@ -1,0 +1,13 @@
+{
+    "lead_filed": {
+        "at": "2026-09-25 16:30 UTC",
+        "unit": "auriga",
+        "repo": "kzmttkc/vet402",
+        "repo_url": "https://github.com/kzmttkc/vet402",
+        "note": "Japanese-led independent x402 verification project (TypeScript, 0 stars, 9 open issues). Publishes verification results for x402 endpoints. Issue #41 is a co-building invite from 源·ORIGIN (ORIGIN) — kzmttkc replied 2026-09-22 saying they don't join builder programmes and index from public catalogs. Not a first-contact target: the co-building invite was already addressed by kzmttkc, and we have no entry point. FILED AS LEAD — vet402's verification methodology and public catalog indexing could be relevant if x402 verification becomes a swarm capability.",
+        "territory": "auriga (Japanese-led, x402/agent-payments, outside Nano)",
+        "discovered_via": "payment-doc index scan (git log)",
+        "decision": "lead, not first contact",
+        "next": "monitor for x402 catalog changes or verification methodology developments; revisit if a public catalog entry for origin-1 or other non-US rails appears"
+    }
+}

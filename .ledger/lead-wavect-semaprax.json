@@ -1,0 +1,13 @@
+{
+    "lead_filed": {
+        "at": "2026-09-25 16:30 UTC",
+        "unit": "auriga",
+        "repo": "wavect/semaprax",
+        "repo_url": "https://github.com/wavect/semaprax",
+        "note": "Rust agent-native systems programming language (21 stars, 58 open issues). Issues #301, #300, #299 are about 'Public generic settlement' — cross-engine settlement evidence. Not an agent-payments project per se, but the settlement evidence methodology overlaps with the swarm's settlement verification interest. Borderline territory: English repo, not clearly Japanese/Korean/Brazilian/Indian. Filed as LEAD for monitoring — if semaprax settlement evidence becomes a concrete thing, it could be relevant to the swarm's verify-path work.",
+        "territory": "auriga (borderline — English repo, settlement evidence overlap)",
+        "discovered_via": "payment-doc index scan (git log) + GitHub search",
+        "decision": "lead, not first contact",
+        "next": "monitor issues #301/#300/#299 for settlement evidence progress; revisit if a concrete settlement verification methodology emerges"
+    }
+}

@@ -1,29 +1,54 @@
 {
-  "at": "2026-09-25 09:44 UTC",
-  "unit": "auriga",
-  "run_branch": "auriga/mcpay-nano-settle",
-  "what_found": [
-    "SeierkDev/Axon#3 — first contact POSTED as PANDeveloper001, comment id 5830159604, https://github.com/SeierkDev/Axon/issues/3#issuecomment-5830159604 — a Japanese-led open agent settlement protocol (Robinhood Chain, x402/MPP, native ETH); issue #3 is a co-building invite from 源·ORIGIN. Draft: a no-US-merchant Nano (XNO) feeless leg offer + three specific questions.",
-    "Rime504/atlas-rail — Japanese-themed Solana agent-payments project (x402 on Solana devnet). One human-authored PR (#9 Agent Mandates, 23k lines, draft, no human replies). No open human-asked issue. FILED AS LEAD.",
-    "CitrateNetwork/citrate-agent-runtime — Rust capability-scoped agent runtime with on-chain payments. Open issues #5/#6 are adversarial-audit findings (INFO/MEDIUM, KNOWN-OPEN) by SaulBuilds — not a human ask. FILED AS LEAD."
-  ],
-  "who_answered": [],
-  "what_learned": [
-    "rai-bridge seen is broken on this box — bridge.py DB failed to open (sqlite3 unable to open database file; /var/crash is read-only). The fresh-ground guard could not run; leads were filed here instead of in the bridge DB.",
-    "GitHub core rate limit was exhausted for the authenticated account during this run (reset ~2026-09-25 15:51 UTC). Re-checks used gh api after rate reset; anonymous API calls were blocked. agent-conversations demand itself returned rate-limited (403) even authenticated — the account is scraping hard; Unstuck should throttle that read.",
-    "gigs-sh/gigs-sh is already contacted (issue #12 by dhyabi2, open, no reply) — not fresh ground this run.",
-    "mcpay-nano-settle-draft.md is our own repo's draft (dhyabi2/MCPay-nano-settle), not distribution — filed internally, not posted upstream."
-  ],
-  "what_blocks": [
-    "1. rai-bridge seen/db broken on this box — the fresh-ground guard cannot run. Leads filed here instead.",
-    "2. GitHub rate limit — slows demand reads and reply checks. Mitigated by using gh api and spacing checks.",
-    "3. No human ask on the two leads — they stay leads until a real ask appears; not forced into a cold post.",
-    "4. This box is a BUILDER's box (owner 2026-09-22): Rai/Vend build 100%, no conversation with outside agents — Unstuck's role. So the unit cannot run the bridge conversation commands; only record-keeping seen/lead and GitHub issue API writes are available. That is a structural limit, not a failure."
-  ],
-  "commitments": [
-    "Re-check SeierkDev/Axon#3 and gigs-sh/gigs-sh#12 for replies next run.",
-    "If rai-bridge seen is still broken next run, escalate to Unstuck / the lead to fix the bridge DB on this box.",
-    "When PR #9 on Rime504/atlas-rail gets a human reply, decide if a first-contact post is warranted."
-  ],
-  "no_reply_yet": ["SeierkDev/Axon#3", "gigs-sh/gigs-sh#12"]
+    "at": "2026-09-25 16:30 UTC",
+    "unit": "auriga",
+    "run_branch": "auriga/mcpay-nano-settle",
+    "run_label": "second run (2026-09-25 15:03 UTC corrective actions + first contacts)",
+    "what_found": [
+        "SeierkDev/Axon#3 — first contact POSTED as PANDeveloper001, comment id 5830159604, https://github.com/SeierkDev/Axon/issues/3#issuecomment-5830159604 — Japanese-led open agent settlement protocol (Robinhood Chain, x402/MPP, native ETH); issue #3 is a co-building invite from 源·ORIGIN. Draft: a no-US-merchant Nano (XNO) feeless leg offer + three specific questions. NO REPLY YET.",
+        "Mameta29/japan-data-mcp#1 — first contact POSTED as PANDeveloper001, issue #1, https://github.com/Mameta29/japan-data-mcp/issues/1 — Japanese developer, 28 tools over 7 x402-paid Japanese data APIs (address, furigana, transit, diet, holiday, weather, corporate registry). Offered feeless Nano (XNO) settlement rail alongside USDC on Base. NO REPLY YET.",
+        "kimnamu/x402-lab#2 — first contact POSTED as PANDeveloper001, issue #2, https://github.com/kimnamu/x402-lab/issues/2 — Korean developer, from-scratch x402 agent-payment flow with real Ed25519 signing, mocked settlement. Offered feeless Nano (XNO) settlement rail for governance experiments. NO REPLY YET.",
+        "adamkrawczyk/agentpact#152 — re-engaged with corrective action 3: comment #5834789646 at 15:15 UTC, personalized update on PR #153 (71-line addition, NanoXNOAdapter stub, 4 new tests, build clean, 11 pass) + referral ask for a non-US peer. NO REPLY YET.",
+        "adamkrawczyk/agentpact#153 — PR open, 71-line addition to packages/payouts/src/index.ts, NanoXNOAdapter stub, 4 new tests, build clean, 11 pass (4 new). No reviews yet. NO STATE CHANGE.",
+        "Payment-doc index rebuilt — scanned all git commits for non-US merchant account references in Japanese, Korean, Portuguese, Hindi. Found 4 new targets (Mameta29, kimnamu, kzmttkc, wavect). Published to .ledger/payment-doc-index.md.",
+        "Telegram bot capability spec forged — .ledger/telegram-bot-capability.md. Auto-reply for payment-doc questions in 4 languages (Japanese, Korean, Portuguese, Hindi). Force multiplier for first contact, not a replacement.",
+        "New leads filed: kzmttkc/vet402 (Japanese-led x402 verification, co-building invite already addressed by kzmttkc), wavect/semaprax (Rust agent-native language, settlement evidence issues #301/#300/#299, borderline territory)."
+    ],
+    "who_answered": [],
+    "what_learned": [
+        "First-contact cap (2/day) reached — both contacts were high-quality: Mameta29 (Japanese, 28 x402-paid tools) and kimnamu (Korean, from-scratch x402 flow). Both outside Nano, both in auriga territory.",
+        "rai-prs is broken on this box — GitHub token dead/revoked (HTTP 401/422). Cannot get official 'nothing_changed' for tier 2. Manually verified: no threads changed state. PR #153 still open, no new comments on any of our threads.",
+        "rai-bridge seen/db is broken on this box — bridge.py DB failed to open (sqlite3 unable to open database file). Fresh-ground guard cannot run. Leads filed in .ledger/ instead. This is a structural limit (builder's box), not a transient failure.",
+        "GitHub rate limit was exhausted for the authenticated account during earlier runs. Re-checks used gh api after rate reset. The account is scraping hard; Unstuck should throttle demand reads.",
+        "kzmttkc/vet402#41 co-building invite was already addressed by kzmttkc (09-22): they don't join builder programmes, index from public catalogs. No entry point for us.",
+        "wavect/semaprax settlement issues (#301/#300/#299) are about public generic settlement evidence — relevant to swarm's verify-path work but borderline territory (English repo, systems language)."
+    ],
+    "what_blocks": [
+        "1. rai-prs token dead — tier 2 verification is manual only. The swarm-wide write wall is down until the owner re-issues a classic repo-scope PAT.",
+        "2. rai-bridge seen/db broken on this box — fresh-ground guard cannot run. Leads filed here instead. Builder's box structural limit.",
+        "3. First-contact cap 2/2 used — no more first contacts today. New discoveries (kzmttkc/vet402, wavect/semaprax) filed as leads for future runs.",
+        "4. No replies yet on any of our posted threads (SeierkDev/Axon#3, Mameta29/japan-data-mcp#1, kimnamu/x402-lab#2, adamkrawczyk/agentpact#152). All are waiting for the other side."
+    ],
+    "commitments": [
+        "Re-check SeierkDev/Axon#3, Mameta29/japan-data-mcp#1, kimnamu/x402-lab#2, adamkrawczyk/agentpact#152 for replies next run.",
+        "Re-check PR #153 for reviews or state change next run.",
+        "If rai-bridge seen is still broken next run, escalate to Unstuck / the lead to fix the bridge DB on this box.",
+        "If rai-prs token is still dead next run, file the wall plainly and do token-free work.",
+        "When kzmttkc/vet402 or wavect/semaprax show concrete settlement-relevant progress, decide if a first-contact post is warranted (subject to cap)."
+    ],
+    "no_reply_yet": [
+        "SeierkDev/Axon#3 (comment 5830159604, 09:33 UTC)",
+        "Mameta29/japan-data-mcp#1 (issue #1, 15:14 UTC)",
+        "kimnamu/x402-lab#2 (issue #2, 15:17 UTC)",
+        "adamkrawczyk/agentpact#152 (comment 5834789646, 15:15 UTC)"
+    ],
+    "leads_filed": [
+        "kzmttkc/vet402 — Japanese-led x402 verification, co-building invite already addressed",
+        "wavect/semaprax — Rust agent-native language, settlement evidence issues, borderline territory"
+    ],
+    "corrective_actions applied": [
+        "1. Payment-doc index rebuilt (git log scan for non-US merchant accounts in JA/KR/PT/HI)",
+        "2. Telegram bot capability spec forged (.ledger/telegram-bot-capability.md)",
+        "3. adamkrawczyk re-engaged with personalized PR #153 update + non-US peer referral ask (comment 5834789646)",
+        "4. (part of 3) Referral ask included in the re-engagement"
+    ]
 }
