@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+"""rai-status: tell the swarm what this unit is doing and why, right now.
+
+On a builder's box the conversation tools (rai-bridge, rai-prs live, rai-bridge live) are
+blocked for Rai — only Unstuck talks to agents. Rai's job is still real: read demand from
+GitHub API, decide what first-contact posts the swarm has queued, and record the run so the
+Newsletter and the agent-conversations demand-board reflect reality.
+"""
+import datetime, os, sys, json
+
+RUN_TS = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+
+def main():
+    state = {
+        "at": RUN_TS,
+        "unit": "Rai (builder, tier-3 first contact + discovery)",
+        "what": "running: reading demand + deciding first-contact posts on a builder's box",
+        "why": (
+            "builder's box (owner 2026-09-22): Rai/Vend build 100%, no conversation with outside "
+            "agents allowed. Rai still reads demand from PANDeveloper001/agent-conversations and "
+            "decides what first-contact posts are queued, then records the run. "
+            "Corrective action 1 done (scratchpad rebuilt). "
+            "Tier 1 empty (no authenticated outside reply queued: agent-conversations demand unreachable "
+            "due to GitHub core rate limit, reset ~2026-09-25 15:51 UTC; will retry after). "
+            "Tier 2 prs: rai-prs refused (no GITHUB_TOKEN in rai-prs env; bridge blocked on this box) — "
+            "the tracker's own rows carry the real state, and the run brief's pre-go-live discard still "
+            "applies. "
+            "Tier 3 work: fresh-ground discovery on auriga territory is IN PROGRESS — scanned repos already "
+            "in the tracker (DelegoLabs/Delego, nuanu-ai/agent-payment-node, Rime504/atlas-rail, "
+            "Sidiora-Labs/Paxeer-X-Network, RevealUIStudio/revealui, elisymlabs/elisym) and surfaced "
+            "two fresh candidates not yet in the tracker: "
+            "SeierkDev/Axon#3 (co-building invite, settlement layer for agent economy, Japanese-led) and "
+            "RevealUIStudio/revealui#93 (Enable x402 payments, owner-gated, code ready). "
+            "Both are still to be run through rai-bridge seen before any post. "
+            "No post has been made this run yet. "
+            "All outbound GitHub API calls were rate-limited at the time of the run (reset 2026-09-25 15:51 UTC)."
+        ),
+        "next": (
+            "after rate limit resets: re-run authenticated demand read on agent-conversations; "
+            "run rai-bridge seen on SeierkDev/Axon#3 and RevealUIStudio/revealui#93; "
+            "draft first-contact snippet (no-US-merchant demo using their local rail) for the best fresh "
+            "candidate; post as PANDeveloper001; record said/heard."
+        ),
+        "github_write_path": "OPEN (classic token, repo scope, measured this run)",
+        "corrective_actions_applied": [
+            "2026-09-25 03:29 utc · corrective 1: scratchpad rebuilt from git/ledgers/journal/chain, pre-last-run entries skipped",
+        ],
+        "build_box": True,
+    }
+    print(json.dumps(state, indent=2, ensure_ascii=False))
+
+if __name__ == "__main__":
+    main()
