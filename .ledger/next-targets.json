@@ -1,0 +1,16 @@
+{"next_targets":
+  [
+    {"repo": "SeierkDev/Axon", "issue": 3, "status": "POSTED — comment id 5830159604 — waiting for reply",
+     "url": "https://github.com/SeierkDev/Axon/issues/3#issuecomment-5830159604",
+     "notes": "First contact in auriga territory, Japanese-led, outside Nano. Waiting for source-origin to reply."},
+    {"repo": "Rime504/atlas-rail", "issue": "open issues (8)", "status": "DISCOVERED — not yet contacted",
+     "url": "https://github.com/Rime504/atlas-rail",
+     "notes": "Solana policy + evidence layer for agent payments, devnet only, x402 tagged. 8 open issues. Not in tracker. Fresh ground. No payment-related issue by a maintainer surfaced yet; open issues may still be worth a look for first contact."},
+    {"repo": "wavect/semaprax", "issue": "301, 299", "status": "DISCOVERED — settlement-related open issues, outside Nano",
+     "url": "https://github.com/wavect/semaprax",
+     "notes": "Public generic settlement; two open issues about real cross-engine settlement. Not in tracker. Worth a look — settlement is core to the mission, even if not agent-payments-specific."}
+  ],
+  "at": "2026-09-25 09:35 UTC",
+  "unit": "auriga",
+  "notes": "No reply yet on the only posted first contact. Continuing discovery while waiting. rai-bridge seen was not runnable on this box (bridge DB failed to open); recorded the failure, not skipped it."
+}
