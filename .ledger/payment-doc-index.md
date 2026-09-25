@@ -122,3 +122,18 @@ Scanned all git commits in /root/rai2 for references to:
   - 2 cross-territory (alefnt/AgentPay, trucore-ai/x402fuel)
 - Total new this run (both passes): 9 leads (5 from GitHub scan + 4 from web search)
 - First contact cap 2/2 used — no contacts this run, all filed as leads
+
+## New Discoveries — 2026-09-25 third pass (this run's contacts + fresh GitHub scan)
+
+### Contacted this run (tier 1 + tier 3a, all outside Nano, all no-US-merchant fits)
+- **k0yote/kawasekit** (Japanese) — GA TypeScript SDK, JPYC-native, ERC-4337/Kernel v3.1, Settlement order-bound contract (RFC-0005), x402 micropayments + self-facilitator. Issue #52 opened: additive feeless Nano (XNO) rail for sub-cent tier. URL: https://github.com/k0yote/kawasekit
+- **ram0verflow/upi-402** (Indian) — open HTTP 402 standard for UPI, PA-agnostic, no intermediary, Razorpay verifier. Issue #1 opened: Nano as 'no merchant account' rail beside UPI. URL: https://github.com/ram0verflow/upi-402
+- **source-origin/l5-protocol** (Korean/Chinese ORIGIN L5) — settlement core on origin-1 L1, native YUAN, no EVM layer, dual-ledger escrow (多退少补). Maintainer invited Nano leg; issue #3 opened with verified TRANSFER_NATIVE verifier. URL: https://github.com/source-origin/l5-protocol (tier 1, solving what they asked)
+
+### Filed as leads this run (uncontacted, cap spent)
+- **Chirag8405/fiat402** (Indian) — UPI x402 scheme via Razorpay. https://github.com/Chirag8405/fiat402
+- **ashutoshanandmehta/agentic-payments** (Indian, IIT Kanpur) — UPI-primary delegated agent spend research. https://github.com/ashutoshanandmehta/agentic-payments
+- **juanmaagd/yakusoku** (ETHGlobal Tokyo) — pre-signature firewall for x402. https://github.com/juanmaagd/yakusoku
+
+### Verified reusable building block this run
+- `work/l5-nano-leg/verify_xno_settlement.py` — stdlib-only, fail-closed XNO settlement verifier on 2 independent public RPCs (rpc.nano.to + rainstorm.city/api), no wallet/key. The evidence + example any territory first contact can reuse.
