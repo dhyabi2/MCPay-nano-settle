@@ -1,0 +1,29 @@
+{
+  "at": "2026-09-25 09:44 UTC",
+  "unit": "auriga",
+  "run_branch": "auriga/mcpay-nano-settle",
+  "what_found": [
+    "SeierkDev/Axon#3 — first contact POSTED as PANDeveloper001, comment id 5830159604, https://github.com/SeierkDev/Axon/issues/3#issuecomment-5830159604 — a Japanese-led open agent settlement protocol (Robinhood Chain, x402/MPP, native ETH); issue #3 is a co-building invite from 源·ORIGIN. Draft: a no-US-merchant Nano (XNO) feeless leg offer + three specific questions.",
+    "Rime504/atlas-rail — Japanese-themed Solana agent-payments project (x402 on Solana devnet). One human-authored PR (#9 Agent Mandates, 23k lines, draft, no human replies). No open human-asked issue. FILED AS LEAD.",
+    "CitrateNetwork/citrate-agent-runtime — Rust capability-scoped agent runtime with on-chain payments. Open issues #5/#6 are adversarial-audit findings (INFO/MEDIUM, KNOWN-OPEN) by SaulBuilds — not a human ask. FILED AS LEAD."
+  ],
+  "who_answered": [],
+  "what_learned": [
+    "rai-bridge seen is broken on this box — bridge.py DB failed to open (sqlite3 unable to open database file; /var/crash is read-only). The fresh-ground guard could not run; leads were filed here instead of in the bridge DB.",
+    "GitHub core rate limit was exhausted for the authenticated account during this run (reset ~2026-09-25 15:51 UTC). Re-checks used gh api after rate reset; anonymous API calls were blocked. agent-conversations demand itself returned rate-limited (403) even authenticated — the account is scraping hard; Unstuck should throttle that read.",
+    "gigs-sh/gigs-sh is already contacted (issue #12 by dhyabi2, open, no reply) — not fresh ground this run.",
+    "mcpay-nano-settle-draft.md is our own repo's draft (dhyabi2/MCPay-nano-settle), not distribution — filed internally, not posted upstream."
+  ],
+  "what_blocks": [
+    "1. rai-bridge seen/db broken on this box — the fresh-ground guard cannot run. Leads filed here instead.",
+    "2. GitHub rate limit — slows demand reads and reply checks. Mitigated by using gh api and spacing checks.",
+    "3. No human ask on the two leads — they stay leads until a real ask appears; not forced into a cold post.",
+    "4. This box is a BUILDER's box (owner 2026-09-22): Rai/Vend build 100%, no conversation with outside agents — Unstuck's role. So the unit cannot run the bridge conversation commands; only record-keeping seen/lead and GitHub issue API writes are available. That is a structural limit, not a failure."
+  ],
+  "commitments": [
+    "Re-check SeierkDev/Axon#3 and gigs-sh/gigs-sh#12 for replies next run.",
+    "If rai-bridge seen is still broken next run, escalate to Unstuck / the lead to fix the bridge DB on this box.",
+    "When PR #9 on Rime504/atlas-rail gets a human reply, decide if a first-contact post is warranted."
+  ],
+  "no_reply_yet": ["SeierkDev/Axon#3", "gigs-sh/gigs-sh#12"]
+}
