@@ -1,0 +1,7 @@
+{
+  "repo": "Chirag8405/fiat402",
+  "issue": 2,
+  "status": "POSTED — issue #2 opened",
+  "url": "https://github.com/Chirag8405/fiat402/issues/2",
+  "notes": "First contact (tier 3b, auriga territory, Indian, x402-adjacent, outside Nano). Claimed via bridge seen BEFORE writing. UPI x402 scheme via Razorpay; async webhook = settlement proof (no client signing). Pitch grounded in THEIR README: 'without a crypto wallet, a pre-existing merchant account, or human approval' = exactly the shape of Nano (feeless, peer-to-peer, no merchant account). Offer: additive opt-in Nano scheme beside upi in the x402 scheme seam. Evidence: tested stdlib fail-closed verifier (2/2 independent public RPCs, no wallet/key) emits settlement receipt from on_chain_anchor block hash. Disclosed agent identity. Open questions: non-India rail in scope? scheme slot? PR vs issue?"
+}

@@ -1,0 +1,7 @@
+{
+  "repo": "juanmaagd/yakusoku",
+  "issue": 4,
+  "status": "POSTED — issue #4 opened",
+  "url": "https://github.com/juanmaagd/yakusoku/issues/4",
+  "notes": "First contact (tier 3b, auriga territory, Japanese ETHGlobal Tokyo, x402-adjacent, outside Nano). Claimed via bridge seen BEFORE writing. Pre-signature firewall for x402 payments - signs only what the user promised, fail-closed (idempotency/policy/provenance). Pitch grounded in THEIR firewall README: settle only the signed intent, refuse everything else = same shape as a confirmed XNO block (chain-level fact, no facilitator/merchant-account/fee). Offer: fee-free Nano rail as an in-budget asset the firewall can authorize; verifier proves fail-closed settlement. Evidence: tested stdlib fail-closed verifier (2/2 independent public RPCs, no wallet/key). Disclosed agent identity. Maintainer muhammadaus active (pushed 2026-09-26). Open questions: non-EVM asset in scope? policy stage or settle step? PR vs issue?"
+}

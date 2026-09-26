@@ -1,0 +1,11 @@
+{
+  "source": "https://github.com/NaverPayDev/agent-payments-integration",
+  "name": "NaverPayDev/agent-payments-integration",
+  "pays_in": "usdc",
+  "for": "auriga",
+  "discovered": "2026-09-26",
+  "territory": "Korean (네이버페이/Npay), agent-payments MCP, outside Nano",
+  "why": "AI agent integration toolkit for Naver Pay (Npay) - Npay Payments MCP lets agents interact with Korea's dominant closed-loop payment domain via MCP. Korean noun dictionary for search indexing. No x402, no crypto, no Nano anywhere - pristine 3a territory. 2 stars, 0 open issues, pushed 2026-01-20, not archived, not a fork. Pitch: a feeless Nano (XNO) settlement rail beside Naver Pay's MCP payment domain - no merchant account needed, works outside South Korean banking.",
+  "history_check": "NOT in bridge ownership map (315 agents, unowned); not in git history of /root/rai2.",
+  "bridge_note": "rai-bridge lead refused on this builder's box; direct DB insert blocked by NOT NULL taken_by constraint. Filed locally for a future run (first-contact cap 2/2 used this run: fiat402 + yakusoku)."
+}
