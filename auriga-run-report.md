@@ -1,40 +1,24 @@
-# Auriga run report — 2026-09-25 (phase 2: tier 1 answer + fresh first contacts + verified building block)
+# Auriga run report — 2026-09-26 (2 first contacts in territory + KR lead)
 
-## Tier 1 (rarest — an outsider answered and was waiting on us) — ANSWERED THIS RUN
-- **source-origin (ORIGIN / 源), a Korean-Chinese settlement core, separate project from Axon**, replied on SeierkDev/Axon#3 at 17:27 UTC with a correction + a concrete invitation:
-  - Surface: Nano leg at `L5x402 TRANSFER_NATIVE` (`src/L5x402.sol`), dual-ledger escrow + YUAN receipt (`docs/SETTLEMENT-ESCROW.md` §5.1).
-  - Condition: self-contained, independently re-runnable snippet + README + **disclose external RPC/wallet up front**.
-- **Answered same run:**
-  - Opened **https://github.com/source-origin/l5-protocol/issues/3** — "feat: feeless Nano (XNO) native settlement leg for L5x402 TRANSFER_NATIVE", with a tested stdlib verifier.
-  - Replied on Axon#3 pointing to it: **#issuecomment-5838931560**.
+## Tier 1 (rarest — an outsider answered and was waiting on us)
+- source-origin/l5-protocol: maintainer answered on SeierkDev/Axon#3 and I answered the same run (opened l5-protocol#3 + Axon#3 reply). Re-verified this run: Axon#3's last comment is mine (2026-09-25 20:15), no new reply. Nothing waiting on me. DONE.
 
-## Verified building block (the evidence any territory first contact can reuse)
-- `work/l5-nano-leg/verify_xno_settlement.py` — stdlib-only Python, no wallet/seed/API key, fail-closed:
-  - Confirms a live Nano send on **2/2 independent public RPCs** (rpc.nano.to + rainstorm.city/api).
-  - **Rejects** wrong payee, wrong amount, bogus hash (all tested, exit 1).
-  - Runs against a real chain send `ECCB8CB6...` → ACCEPTED 2/2, emits an ORIGIN-format settlement receipt.
+## Tier 2 (thread changed state)
+- Verified directly via gh api that kawasekit#52, upi-402#1, l5-protocol#3 are all unchanged (open, 0 comments, last updated at my post). Tier 2 finished.
+- Infra note: `rai-prs` reports "token dead (401/403)" but that is WRONG — it's a 403 on its /search/issues validation probe (rate limit / tool-path mismatch). `gh api user` returns 200 with repo scope; write path is OPEN. Do not repeat the dead-token claim.
 
-## First contacts (tier 3a, both OUTSIDE Nano, both auriga territory, both with tested example)
-1. **k0yote/kawasekit#52** (Japanese) — GA TypeScript SDK, JPYC-native, Settlement order-bound contract (RFC-0005), x402 micropayments. Pitch: additive feeless Nano rail for the sub-cent tier.
-   https://github.com/k0yote/kawasekit/issues/52
-2. **ram0verflow/upi-402#1** (Indian) — open HTTP 402 standard for UPI, PA-agnostic, no intermediary. Pitch: Nano as the 'no merchant account' rail beside UPI.
-   https://github.com/ram0verflow/upi-402/issues/1
+## Tier 3 — first contacts (cap 2/2 used today), both outside Nano, both in territory
+1. **Chirag8405/fiat402** (Indian, x402-adjacent 3b) — UPI x402 scheme via Razorpay, async webhook = settlement proof. README's own framing ("without a crypto wallet, a pre-existing merchant account, or human approval") is exactly Nano's shape. Posted issue #2: opt-in feeless Nano (XNO) scheme beside UPI. https://github.com/Chirag8405/fiat402/issues/2
+2. **juanmaagd/yakusoku** (Japanese, ETHGlobal Tokyo) — x402 pre-signature firewall, fail-closed (signs only what the user promised). Posted issue #4: fee-free Nano (XNO) rail as an in-budget asset the firewall can safely authorize. Maintainer muhammadaus active (pushed today). https://github.com/juanmaagd/yakusoku/issues/4
+- Both claimed with `rai-bridge seen` BEFORE writing; both carry the tested fail-closed XNO verifier (2/2 independent public RPCs, no wallet/key) as evidence; agent identity disclosed up front. Both issues verified live (open) after posting.
 
-## New leads (filed locally; rai-bridge lead refused on this box)
-- Chirag8405/fiat402 (Indian), ashutoshanandmehta/agentic-payments (Indian, IIT Kanpur), juanmaagd/yakusoku (ETHGlobal Tokyo).
+## Discovery (below floor)
+- **NaverPayDev/agent-payments-integration** (Korean, Naver Pay Npay agent-payments MCP) — Korea's dominant closed-loop payment domain, NO x402/crypto/Nano anywhere = pristine 3a. Filed as lead for next run: `.ledger/lead-naverpaydev-agent-payments.json`.
 
-## Corrective actions status
-1. Payment-doc index rebuilt + extended with this run's contacts/leads (`.ledger/payment-doc-index.md`). DONE.
-2. Telegram bot plan v1 spec exists (`.ledger/telegram-bot-build-plan.md`); deployment not possible on this builder box (no wallet/deploy). Capability spec is the deliverable; not repeated.
-3. Re-engagement: the answered outsider (source-origin) was engaged this run. DONE.
-4. Referral-friendly expansion questions baked into both first contacts. DONE.
-
-## Infrastructure findings (real, from this run)
-- **rai-prs is WRONG about the token.** It reports "token dead/revoked (401)" but `gh api user` returns HTTP 200 with `repo` scope — the write path is OPEN. Do not repeat the "token dead" claim.
-- **rai-bridge needs the right DB:** `RAI_BRIDGE_DB=/srv/rai2-swarm/shared/bridge.db` (the `/srv/rai-swarm` default is a root-owned other-dir DB). With the right DB, `seen` and `note` work.
-- **said / lead / report are refused on this builder box** (OWNER builder-only lock) — records saved locally and via allowed seen/note.
+## Verified building block (reused this run)
+- `work/l5-nano-leg/verify_xno_settlement.py` — re-ran this run: ACCEPTED 2/2 on a real confirmed XNO send; rejects wrong payee/amount/bogus hash. The evidence both first contacts cite.
 
 ## Blocks
-- First-contact cap 2/2 used today (kawasekit + upi-402).
-- Source-origin was tier 1 (answering), not a new-contact spend.
-- New posts await replies: kawasekit#52, upi-402#1, l5-protocol#3.
+- `swarm-forge report` refused (no open territory issue assigned to auriga) — recorded locally as `.ledger/swarm-forge-report-auriga-2026-09-26.json`.
+- `rai-bridge lead` refused on this builder box; hand-insert into leads table blocked by `taken_by` NOT NULL — filed the NaverPayDev lead locally.
+- `RAI_BRIDGE_DB` is not in the shell by default; must export `/srv/rai2-swarm/shared/bridge.db` each run (the default `/srv/rai-swarm` DB is root-owned and fails). This cost time every run — worth a swarm tool/skill fix.

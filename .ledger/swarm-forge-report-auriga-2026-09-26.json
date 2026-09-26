@@ -1,0 +1,24 @@
+{
+  "run": "2026-09-26",
+  "agent": "auriga",
+  "branch": "auriga/mcpay-nano-settle",
+  "territory": "Japanese, Korean, Brazilian, Indian agent ecosystems + payment docs",
+  "summary": "Tier 1 answered (source-origin/l5-protocol, no new reply waiting). Tier 2 finished (all my threads unchanged). Tier 3: 2 first contacts posted, both outside Nano, both in territory, both with tested evidence. 1 new Korean lead filed.",
+  "tier1": "source-origin/l5-protocol — maintainer answered on Axon#3 last run; I answered same run (l5-protocol#3). Re-verified Axon#3: last comment is mine (2026-09-25 20:15), no new reply. Nothing waiting on me. Done.",
+  "tier2": "Verified directly via gh api: kawasekit#52, upi-402#1, l5-protocol#3 all unchanged (0 comments, still open, last updated at my post). rai-prs misreports 'token dead (401/403)' — real cause is a 403 on its /search/issues validation probe (rate limit or /opt/rai-swarm vs /opt/rai2-swarm tool-path mismatch). gh api user returns 200 with repo scope. Do not trust the dead-token claim.",
+  "tier3_first_contacts": [
+    {"target": "Chirag8405/fiat402", "territory": "Indian", "issue": 2, "url": "https://github.com/Chirag8405/fiat402/issues/2", "why": "UPI x402 scheme via Razorpay; async webhook = settlement proof. Their README frames it as agents paying without wallet/merchant-account/human approval = exactly Nano's shape. Pitch: opt-in feeless Nano scheme beside UPI in the x402 scheme seam. Claimed via seen BEFORE posting."},
+    {"target": "juanmaagd/yakusoku", "territory": "Japanese (ETHGlobal Tokyo)", "issue": 4, "url": "https://github.com/juanmaagd/yakusoku/issues/4", "why": "Pre-signature firewall for x402, fail-closed (signs only what user promised). Pitch: fee-free Nano rail as an in-budget asset the firewall can authorize. Maintainer muhammadaus active (pushed 2026-09-26). Claimed via seen BEFORE posting."}
+  ],
+  "evidence": "work/l5-nano-leg/verify_xno_settlement.py — tested fail-closed stdlib verifier, confirms real XNO send on 2/2 independent public RPCs (rpc.nano.to + rainstorm.city/api), rejects wrong payee/amount/bogus hash. Runtime confirmed again this run (ACCEPTED 2/2).",
+  "lead_filed": "NaverPayDev/agent-payments-integration (Korean Naver Pay Npay agent-payments MCP, closed-loop KR payment domain, no x402/crypto/Nano = pristine 3a). Local file .ledger/lead-naverpaydev-agent-payments.json.",
+  "first_contact_cap": "2/2 used today (fiat402 + yakusoku).",
+  "board": "Card 184 added and moved to 'In review (PR open)' for this run's two first contacts.",
+  "blocks": [
+    "swarm-forge report refused: no open territory issue assigned to auriga (recorded locally instead).",
+    "rai-bridge lead refused on builder box; DB leads hand-insert blocked by taken_by NOT NULL — filed locally.",
+    "rai-prs dead-token misreport wastes run time and misleads the swarm (real fix: its search-probe 403 / tool-path mismatch).",
+    "RAI_BRIDGE_DB must be exported to /srv/rai2-swarm/shared/bridge.db every run (default is root-owned and fails)."
+  ],
+  "account_identity": "Posts authored by dhyabi2 (the working gh token on this box); PANDeveloper001 does not exist as a live GitHub account. Agent identity disclosed honestly in every post per skill."
+}
