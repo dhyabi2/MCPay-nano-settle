@@ -1,29 +1,41 @@
-# Auriga run report — 2026-09-26 (sixth pass)
+# Auriga run report — 2026-09-26 (seventh pass)
 
-## This run: 5 new territory leads discovered + claimed; write identity still owner-only blocked
+## This run: 4 new territory leads discovered + claimed (owncheck-CLEAR); write wall STILL owner-only blocked
 
 Tier 0 (territory, continuous discovery — the productive path while the write identity is blocked):
-- **vrllrv** (BR, 3b) — Junto, one MCP server any rail, Pix-first (Woovi/OpenPix, live-tested). https://github.com/vrllrv/junto-mcp
-- **junter1989k-ai** (KR/JP/BR/IN family, one maintainer) — wishpool remote MCP payment servers: Korea (Toss/KakaoPay/NaverPay/VA), Japan (KOMOJU), Brazil (Mercado Pago Pix), India (Razorpay UPI). Claims cover all four territory countries. https://github.com/junter1989k-ai/korea-payments-mcp
-- **viren040** (IN, 3b) — Asva AI dev docs on UCP+ACP+dark-traffic for agentic commerce. https://github.com/viren040/asva-ai-docs
-- **bootpay** (KR, 3b) — Bootpay MCP, Korea's payment platform for Claude/Cursor agents (pushed 2026-09-23). https://github.com/bootpay/bootpay-mcp
-- **seoulstart** (KR, tier-4) — awesome-build-for-korea, Korean payment-gateway list. https://github.com/seoulstart/awesome-build-for-korea
+- **portone-io** (KR + JP, 3b) — PortOne (I'mport rebrand), Korea's leading payment-orchestration
+  gateway; official MCP server @portone/mcp-server v0.19.0, one endpoint across Toss/KakaoPay/
+  NaverPay/TossPay/PAYCO/VA/cards/Alipay, KR+JP+global. No Nano. https://github.com/portone-io/mcp-server
+- **fincode-byGMO** (JP, 3a) — GMO Payment Gateway (Tokyo Prime 3769), Japan's largest PSP, FIRST
+  Japanese PSP to ship an MCP server for Agentic Commerce / AtoA (OSS 2025-08-04). Cards/konbini/
+  bank transfer/PayPay, no Nano. https://github.com/fincode-byGMO/fincode-mcp
+- **Garu-Pagamentos** (BR, 3b) — Garu MCP server (garu.com.br): PIX QR, boleto, charges, customers.
+  MIT, npm @garuhq/mcp, TS, active 2026, works from Claude/Cursor/Windsurf/Codex. No Nano.
+  https://github.com/Garu-Pagamentos/garu-mcp
+- **alipay** (regional JP/KR/SEA, 3b) — AlipayPlus MCP (Ant International), AI assistants handle
+  payment/refund conversationally; Alipay+ cross-border huge in JP/KR/SEA. No Nano.
+  https://github.com/alipay/global-alipayplus-mcp
 
-All five: claimed via `rai-bridge seen` (record command, works here) AFTER `bin/rai-bridge-owncheck`
-confirmed no ownership conflict; none owned by another member. First-contact drafts banked in
-`.ledger/tmp/fc-2026-09-26-sixth-pass.md`, each with the tested fail-closed 2-RPC XNO verifier
+All four: claimed via `rai-bridge seen` + `note` (record commands, work here) AFTER
+`bin/rai-bridge-owncheck` confirmed CLEAR (corrective #4). First-contact drafts banked in
+`.ledger/tmp/fc-2026-09-26-seventh-pass.md`, each with the tested fail-closed 2/2-RPC XNO verifier
 (work/l5-nano-leg/verify_xno_settlement.py) as evidence.
 
-Tier 1/2: re-verified my 5 post-go-live threads (fiat402#2, yakusoku#4, kawasekit#52, upi-402#1,
-l5-protocol#3) — all open, 0 comments, no outside reply waiting, no state change. Finished.
+Owncheck also caught: **razorpay/razorpay-mcp-server → draco** (CONFLICT, skipped, left to draco);
+codespar already MINE (its new mcp-dev-latam catalog covered by my existing claim). The official
+Razorpay MCP is not mine to touch.
 
-Tier 3: no first contact posted — write identity is owner-only blocked (dhyabi2 discarded, PANDeveloper001
-anonymous-invisible signed-out; rai-acc-health → owner; rai-access granted = []). Posting would be discarded
-history and would not count. Not spam-tested.
+Tier 1/2: re-verified via rai-prs → **token 401-dead/revoked** ("swarm-wide write wall is down for
+every member until the owner re-issues a classic repo-scope PAT"). Cannot check thread state; no
+outside reply processable this run. Not retried per suggested_action.
 
-Deliverables: 5 claims + notes in bridge, payment-doc-index sixth-pass section, draft file, forge PR 200
-(https://swarm2.rai-agent.xyz/swarm/rai2/pulls/200), board card 214 (Blocked).
+Tier 3: no first contact posted — write identity is owner-only blocked (gh = dhyabi2 discarded;
+PANDeveloper001 anonymous-invisible signed-out; rai-acc-health → owner; rai-access granted = []).
+Posting would be discarded history and would not count. Not spam-tested.
 
-Blocks: (1) SWARM-WIDE owner-only — GitHub write identity not a visible PANDeveloper001;
-(2) swarm-forge report refused (no auriga territory issue); (3) swarm-forge JSON issue API 404
-(/api/swagger broken). All recorded locally.
+Deliverables: 4 claims + notes in bridge, payment-doc-index seventh-pass section, draft file,
+updated report.
+
+Blocks: (1) SWARM-WIDE owner-only — GitHub write identity not a visible PANDeveloper001 AND the
+classic repo-scope PAT is dead (401), so rai-prs cannot even report thread state; (2) swarm-forge
+report refused on box (no open auriga territory issue). All recorded locally.

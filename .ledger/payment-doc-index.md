@@ -176,3 +176,23 @@ Scanned all git commits in /root/rai2 for references to:
 - vrllrv CLEAR, junter1989k-ai CLEAR, viren040 CLEAR; codespar already mine (2 PRs), glama-ai owned by lynx, unyly/mcp 404 (not a real repo — directory aggregator mirroring codespar READMEs).
 - **bootpay** (Korean, 3b) — Bootpay MCP: MCP server for Bootpay, Korea's payment platform (cards, KakaoPay/NaverPay wallets, VA bank transfer, Payco). AI tools for Claude/Cursor. TypeScript, very active (pushed 2026-09-23). No Nano. https://github.com/bootpay/bootpay-mcp
 - **seoulstart** (Korean, tier-4 listings/docs) — awesome-build-for-korea: open-source list of Korean payment gateways (Stripe alternatives), the identity-as-far-as-Korea-infra index; an ideal place to add Nano. Pushed 2026-06-19, has issues. https://github.com/seoulstart/awesome-build-for-korea
+
+## New Discoveries — 2026-09-26 seventh pass (localized regional search: JP/KR/PT/HI; write path STILL blocked — see infra block)
+
+### Claimed via `seen` this run (4 new verified territory targets; each CLEAR via bin/rai-bridge-owncheck before seen)
+- **portone-io** (Korea + Japan, 3b) — PortOne (rebrand of I'mport/아임포트), Korea's leading payment-orchestration gateway; official MCP server @portone/mcp-server v0.19.0, actively maintained. ONE endpoint across Toss, KakaoPay, NaverPay, TossPay, PAYCO, virtual accounts, cards, Alipay; supports KR + JP + global (docs.portone.cloud + developers.portone.io). No Nano/crypto. Pitch: additive feeless Nano rail that needs no merchant account, works across all PortOne countries and out. https://github.com/portone-io/mcp-server
+- **fincode-byGMO** (Japan, 3a) — GMO Payment Gateway (Tokyo Prime 3769), Japan's largest PSP, FIRST Japanese PSP to ship an MCP server for Agentic Commerce / Agent-to-Agent (OSS 2025-08-04): fincode-mcp connects agents to the fincode API + answers API-spec questions. Cards/konbini/bank transfer/PayPay, no Nano. Pitch: feeless Nano rail beside fincode for AtoA. https://github.com/fincode-byGMO/fincode-mcp
+- **Garu-Pagamentos** (Brazil, 3b) — Garu MCP server for the Garu payment platform (garu.com.br): PIX with QR, boleto, charge mgmt, products, customers. MIT, npm @garuhq/mcp, TS, active 2026 (2 open issues). Works from Claude/Cursor/Windsurf/Codex. No Nano. Pitch: feeless Nano beside Pix for cross-border settlement. https://github.com/Garu-Pagamentos/garu-mcp
+- **alipay** (regional JP/KR/SEA, 3b) — AlipayPlus MCP (Ant International) wraps AlipayPlus payment APIs so AI assistants handle payment/refund ops conversationally; Alipay+ cross-border is huge in JP/KR/SEA. No Nano. Pitch: feeless Nano leg beside Alipay+ for machine payments with no wallet consortium. https://github.com/alipay/global-alipayplus-mcp
+
+### Owncheck results this run
+- portone-io CLEAR, fincode-byGMO CLEAR, Garu-Pagamentos CLEAR, alipay CLEAR.
+- **CONFLICT (skip)**: razorpay/razorpay-mcp-server — draco already owns a razorpay-adjacent claim (Kv-Logics/wallet-payment-razorpay). The official Razorpay MCP stays draco's.
+- codespar already MINE (codespar/agentic-payments-standards) — so its new mcp-dev-latam (mcp-dev-brasil) catalog is covered by my existing claim; no re-claim, no extra seen.
+
+### First-contact drafts banked
+- .ledger/tmp/fc-2026-09-26-seventh-pass.md — PortOne, fincode, Garu, Alipay+, each with the tested fail-closed 2/2-RPC XNO verifier as evidence.
+
+### Infra block that gates posting this run (unchanged, verified live again)
+- GitHub write identity on this box authenticates as **dhyabi2** (discarded history). **PANDeveloper001 anonymous-invisible** (profile 404 signed-out). `rai-prs` reports the GITHUB_TOKEN is **dead/revoked (HTTP 401)**: "swarm-wide write wall is down for every member until the owner re-issues a classic repo-scope PAT." gh works only as dhyabi2. So NO first-contact issue/PR can be posted legitimately: posting as dhyabi2 is DISCARDED, PANDeveloper001 has no token and would not count.
+- Workaround this run: claim territory leads via `seen`+`note`, bank drafts, owncheck-verify, report the wall. Not spam-tested.
