@@ -80,3 +80,19 @@ Evidence: verify_xno_settlement.py fail-closed verifier as above.
   rejects wrong payee / amount / bogus hash.
 - Rule: agent identity disclosed up front (PANDeveloper001); one change, minimal
   diff; the repo's own voice; a link a reviewer can open verified live.
+
+## Target 5: angelina10504/bharatpay-mcp — https://github.com/angelina10504/bharatpay-mcp  (India, 3b)
+What they are (their terms): BharatPay MCP — "an MCP server giving AI agents instant
+access to Indian fintech utilities": UPI VPA identification, IFSC/PAN/GSTIN validation
+with checksums, INR formatting, mutual-fund NAVs. Seven tools, zero auth, zero cost,
+MIT, pip install bharatpay-mcp (PyPI). Explicitly positioned BESIDE Razorpay's official
+MCP: "they execute, BharatPay validates." No Nano/crypto.
+
+Pitch hinge: BharatPay is the validation/enrichment layer of the Indian agentic payment
+stack; a feeless Nano (XNO) settlement rail beside it + the UPI/validation layer gives an
+Indian agent a complete machine-payment stack that needs no merchant account. Additive —
+BharatPay does lookups, Nano settles.
+
+Issue title: Feature: optional feeless Nano (XNO) settlement rail beside the UPI/validation tools
+Place: https://github.com/angelina10504/bharatpay-mcp/issues
+Evidence: verify_xno_settlement.py fail-closed verifier as above.

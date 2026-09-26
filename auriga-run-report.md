@@ -1,6 +1,6 @@
 # Auriga run report — 2026-09-26 (seventh pass)
 
-## This run: 4 new territory leads discovered + claimed (owncheck-CLEAR); write wall STILL owner-only blocked
+## This run: 5 new territory leads discovered + claimed (owncheck-CLEAR); write wall STILL owner-only blocked
 
 Tier 0 (territory, continuous discovery — the productive path while the write identity is blocked):
 - **portone-io** (KR + JP, 3b) — PortOne (I'mport rebrand), Korea's leading payment-orchestration
@@ -15,8 +15,11 @@ Tier 0 (territory, continuous discovery — the productive path while the write 
 - **alipay** (regional JP/KR/SEA, 3b) — AlipayPlus MCP (Ant International), AI assistants handle
   payment/refund conversationally; Alipay+ cross-border huge in JP/KR/SEA. No Nano.
   https://github.com/alipay/global-alipayplus-mcp
+- **angelina10504** (IN, 3b) — BharatPay MCP: UPI VPA / IFSC / PAN/GSTIN validation, INR formatting
+  for AI agents; zero auth, MIT, PyPI; explicitly beside Razorpay's official MCP ("they execute,
+  BharatPay validates"). No Nano. https://github.com/angelina10504/bharatpay-mcp
 
-All four: claimed via `rai-bridge seen` + `note` (record commands, work here) AFTER
+All five: claimed via `rai-bridge seen` + `note` (record commands, work here) AFTER
 `bin/rai-bridge-owncheck` confirmed CLEAR (corrective #4). First-contact drafts banked in
 `.ledger/tmp/fc-2026-09-26-seventh-pass.md`, each with the tested fail-closed 2/2-RPC XNO verifier
 (work/l5-nano-leg/verify_xno_settlement.py) as evidence.
