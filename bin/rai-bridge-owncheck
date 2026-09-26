@@ -1,0 +1,101 @@
+#!/usr/bin/env python3
+"""rai-bridge-owncheck -- enforce ONE-MAINTAINER-ONE-MEMBER before `seen`.
+
+Corrective #4 for the swarm: cross-check a candidate GitHub account/org/repo
+against the bridge `agents` seen-map so a member does not claim someone another
+member already owns (a GitHub account is one person, however many repos it has;
+the SWARM.md rule and the OWNER-RULES.md #2).
+
+Usage:
+  rai-bridge-owncheck --source https://github.com/someorg/somerepo
+  rai-bridge-owncheck --source torify-dev
+  rai-bridge-owncheck --source https://iniciador.com.br   # non-github: match agent key too
+
+Exit codes:
+  0  clear to claim (no owner conflict found)
+  1  conflict: another member already owns this account/repo -> do NOT claim
+  2  error (db unreadable, bad args)
+
+Only reads the bridge DB (the agents seen-map) and the given source; never writes.
+DB path from RAI_BRIDGE_DB env (default /srv/rai2-swarm/shared/bridge.db).
+"""
+
+import argparse
+import os
+import re
+import sqlite3
+import sys
+
+DEFAULT_DB = "/srv/rai2-swarm/shared/bridge.db"
+
+
+def _extract_owner(source: str) -> str:
+    """Return the GitHub owner (account/org) from a source string if present.
+    For non-github URLs, fall back to the registrable-ish host label (e.g.
+    https://iniciador.com.br -> 'iniciador') so the seen-map key matches."""
+    s = source.strip()
+    m = re.search(r"github\.com/([A-Za-z0-9_.-]+)", s)
+    if m:
+        return m.group(1)
+    # non-github URL: take the host's first label
+    hm = re.search(r"://([A-Za-z0-9_.-]+)", s)
+    if hm:
+        host = hm.group(1).lower()
+        if host.startswith("www."):
+            host = host[4:]
+        return host.split(".")[0]
+    # bare handle
+    if "/" not in s:
+        return s
+    return ""
+
+
+def check(db_path: str, source: str):
+    owner = _extract_owner(source)
+    if not db_path or not os.path.exists(db_path):
+        raise OSError(f"bridge DB not found: {db_path}")
+    con = sqlite3.connect(f"file:{db_path}?mode=ro", uri=True)
+    try:
+        cur = con.cursor()
+        rows = cur.execute(
+            "SELECT agent, source_url, owner FROM agents WHERE lower(agent)=lower(?) "
+            "OR lower(source_url) LIKE lower(?)",
+            (source.strip(), f"%{owner}%"),
+        ).fetchall() if owner else cur.execute(
+            "SELECT agent, source_url, owner FROM agents WHERE lower(agent)=lower(?)",
+            (source.strip(),),
+        ).fetchall()
+        return owner, rows
+    finally:
+        con.close()
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--source", required=True, help="candidate source URL or GitHub handle")
+    ap.add_argument("--db", default=os.environ.get("RAI_BRIDGE_DB", DEFAULT_DB))
+    args = ap.parse_args()
+
+    try:
+        owner, rows = check(args.db, args.source)
+    except OSError as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 2
+    except sqlite3.Error as e:
+        print(f"ERROR: cannot read bridge DB {args.db}: {e}", file=sys.stderr)
+        return 2
+
+    if not rows:
+        print(f"CLEAR to claim: no ownership conflict for '{args.source}'"
+              + (f" (github owner: {owner})" if owner else ""))
+        return 0
+
+    print(f"CONFLICT: another member already owns '{args.source}':")
+    for agent, url, owner_col in rows:
+        print(f"  - agent key '{agent}' | source {url} | owner {owner_col}")
+    print("Do NOT claim. Pick a different target, or this is yours already.")
+    return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

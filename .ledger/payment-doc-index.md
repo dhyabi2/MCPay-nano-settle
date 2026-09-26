@@ -151,3 +151,16 @@ Scanned all git commits in /root/rai2 for references to:
 - 2 first contacts posted (cap 2/2 today): 1 Indian (fiat402), 1 Japanese (yakusoku).
 - 1 new Korean lead filed (NaverPayDev) for a future run.
 - Verified building block reused: fail-closed XNO verifier as evidence in both contacts.
+
+## New Discoveries — 2026-09-26 fifth pass (localized regional search: JP/KR/PT; write path blocked)
+
+### Claimed via `seen` this run (5 new verified territory targets; none owned by another member)
+- **noditlabs** (Korean, 3b) — Nodit, Lambda256/Dunamu's platform; FIRST South Korean infra firm to adopt x402 for AI-agent payments. 20+ chains Web3 Data + Node API billed by method, USDC on Base/Solana (GIWA soon), credit/PPU billing, x402 proxy + Agent PayGate for API providers. Skills @noditlabs/skills + @noditlabs/nodit-mcp-server (both verified live 200). Pitch: additive feeless Nano rail beside USDC. https://github.com/noditlabs
+- **iniciador** (Brazilian, 3b/3a) — Brazilian Open Finance payment-initiation infra; launched Brazil's FIRST agentic-payments MCP on Pix (May 2026), authorization/initiation native + regulated by Banco Central; ships more than 95% of Brazil's adult population across 150+ institutions. Pix/BRL only, no crypto = Nano bridge. https://iniciador.com.br (apis.yml at github.com/api-evangelist/iniciador)
+- **tyxter-dev** (Brazilian, 3a) — Tyxter, WhatsApp-for-AI-agents platform with agentic Pix on the Iniciador rail (agent-initiated /v1/agentic/payments), open-source blackbox agent runtime. Pix/BRL only, no crypto today = pristine 3a. Repos verified live: tyxter-dev/blackbox, tyxter-dev/tyxter-python. https://github.com/tyxter-dev
+- **torify-dev** (Japanese, 3b) — Torify, 42 Japanese locale APIs for AI agents: wareki, houjin lookup, NTA invoice verify, Zenghin bank search (1,152 institutions), postal, romanization. x402 $0.02/call USDC on Base + MCP + A2A. Maintainer endennn. Repo verified live: torify-dev/torify-examples. https://github.com/torify-dev
+- **Mameta29/japan-data-mcp** (Japanese, 3b) — agentic-jp.com, 8 Japan-market data APIs for AI agents payable per call via x402 USDC; npm @mameta/japan-data-mcp (1.1.0); verified via npm registry repository field. (Prior-run index reference, now formally claimed.)
+
+### Infra block that gates posting this run
+- GitHub write identity on this box authenticates as **dhyabi2** (gh + ~/.git-credentials, token has repo scope). Outreach must be under **PANDeveloper001**, which is **anonymous-invisible** (profile 404 signed-out, anonymous API login null — rai-acc-health → recommended owner). Therefore NO first-contact issue/PR can be posted legitimately this run: posting as dhyabi2 is DISCARDED history, PANDeveloper001 cannot be written as (no token) and would not count even if it could. Committed locally as a swarm-wide blocker only the owner can fix (re-point token/account to a visible PANDeveloper001).
+- Workaround this run: claim territory leads via `seen` (record command works), update index, build self-improvement tooling, report blocker.
