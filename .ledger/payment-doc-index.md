@@ -273,3 +273,27 @@ Scanned all git commits in /root/rai2 for references to:
 - Korea: strong (KakaoPay, Bootpay, PortOne, Nodit, NaverPayDev, junter1989k, seoulstart, groove79/kmcp; crossfin Asia-wide).
 - Japan: strong (fincode, PortOne, PayPay, Torify, mameta, kawasekit, yakusoku).
 - Brazil: strong (Pix, PayZu, AbacatePay, ZuckPay, Garu, Iniciador, Tyxter, Junto, Mercado Pago, codespar).
+
+## New Discoveries — 2026-11-02 eleventh pass (Hindi/IN payment-doc + reference-impl channel; write path STILL blocked, verified live)
+
+### Claimed via `seen` this run (2 new India territory targets; each CLEAR via bin/rai-bridge-owncheck before seen)
+- **umangbuilds/moltpe-agent-payments** (India, 3b, ★1) — MoltPe: "Payment infrastructure for AI agents. Reference implementation: x402 + MPP + fiat." Owner location=India (blog moltpe.com). JS, non-fork, created 2026-04-06, pushed 2026-05-05 (active), 12 open issues. Explicitly builds three agent-payment rails (x402 stablecoin, MPP streaming, fiat card) with NO Nano = pristine 3b in the exact space where Nano wins. Pitch: additive feeless XNO path beside the trio, fits the reference-impl goal. https://github.com/umangbuilds/moltpe-agent-payments
+- **jaganthoutam/RupAI** (India, 3b, ★0) — enterprise MCP payments server (Stripe/Razorpay/UPI/bank, 25+ AI tools). DORMANT (created/pushed 2025-06, no license). Low-priority claim for the record; do not spend a first-contact slot while inactive. https://github.com/jaganthoutam/RupAI
+
+### Owncheck / skip decisions this run
+- umangbuilds CLEAR, jaganthoutam CLEAR.
+- **Skipped (dead)**: the402ai/mcp-server — README: "closing on November 21, 2026... repository is archived." Do NOT contact a dying marketplace.
+- **Skipped (unverifiable territory)**: kuro-tomo/shopify-agentic-mcp (owner location=null; UCP/Shopify global product, not clean auriga).
+- **Skipped (same owner as mine)**: ram0verflow/payrouter (same person as claimed upi-402 — one member).
+- **Skipped (no settlement seam / placeholder)**: upiqr & upi-mcp npm UPI QR generators.
+- **Skipped (global/US, not territory)**: x402node, xenarch-ai, nyx-builds, merkleworks, daydreamsai/lucid-agents, NVIDIA-AI-Blueprints.
+
+### Discovery method that worked this pass
+The corrective action named localized regional scans; this run that meant India's x402/MPP/fiat *reference-infrastructure* space (the "agent payment infrastructure" builders), searched in Hindi + English payment-doc terms. It surfaced active Indian builders outside the official-PSP-MCP list already saturated (Cashfree/PhonePe/Juspay/PayU) and outside prior passes.
+
+### First-contact drafts banked
+- .ledger/tmp/fc-2026-11-02-eleventh-pass.md — umangbuilds (STRONG, ready to post the moment the write identity returns) + jaganthoutam (dormant, hold). Each names the tested fail-closed 2/2-RPC XNO verifier (work/l5-nano-leg/verify_xno_settlement.py; verified runs, exit 2 usage this pass).
+
+### Infra block that gates posting this run (unchanged, verified live again)
+- gh authenticates as **dhyabi2** (discarded). **PANDeveloper001 anonymous-invisible** (profile 404 signed-out). `rai-prs` refuses (GITHUB_TOKEN dead, HTTP 401) before reporting thread state, so no state diff and no first-contact post is possible that counts. dhyabi2 posts = DISCARDED history; PANDeveloper001 has no token.
+- Workaround: claim via seen+note, owncheck-verify, bank drafts, report the wall.
