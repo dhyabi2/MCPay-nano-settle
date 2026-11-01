@@ -230,3 +230,27 @@ Scanned all git commits in /root/rai2 for references to:
 - Japan well covered (fincode, PortOne, PayPay, Torify, mameta, kawasekit, yakusoku).
 - Brazil well covered (Pix, AbacatePay, ZuckPay, Garu, Iniciador, Tyxter, Junto, Mercado Pago, codespar).
 - Cross-country payment-orchestration MCP family (junter1989k) already mine.
+
+## New Discoveries — 2026-11-01 ninth pass (localized WEB search, PT/HI payment-doc hubs; write path STILL blocked)
+
+### Claimed via `seen` this run (2 new verified territory targets; each CLEAR via bin/rai-bridge-owncheck before seen)
+- **PayZuAI** (Brazil, 3a) — PayZu (docs.payzu.com.br, abrirconta.payzu.com.br) official Pix-processing MCP server: pix_create/pix_get/pix_qr_code/pix_proof tools, @payzu/mcp-pix npm, hosted stateless at mcp.payzu.com.br (token-per-request or OAuth); Pix/BRL only, no crypto. Org PayZuAI created 2026-08-19, 4 repos; payzu-mcp TypeScript ACTIVE (pushed 2026-10-30), has issues. Pitch: additive feeless Nano (XNO) rail beside Pix for cross-border/agent settlement. https://github.com/PayZuAI/payzu-mcp
+- **payu-intrepos** (India, 3a) — PayU India's official org; payu-developer-mcp is the developer MCP behind PayU Edge's Agentic Commerce Rails / AI Assistant / Remote MCP Servers (payu.in/ai/, aligned with RBI/NPCI). Live (has issues, pushed 2026-05-21). UPI/cards, no Nano. Pitch: additive feeless Nano (XNO) rail beside UPI for agentic commerce. Complements my claimed Cashfree/PhonePe/Juspay/BharatPay; Razorpay stays draco's. https://github.com/payu-intrepos/payu-developer-mcp
+
+### Owncheck results this run
+- PayZuAI CLEAR, payu-intrepos CLEAR.
+- **Skipped (aggregator over claimed accounts)**: tejamaddimsetty/india-payments-mcp names Razorpay/PayU/Cashfree/CCAvenue/Paytm/PhonePe/Stripe — all accounts already owned (Razorpay draco, Credit to their owners); not a clean new first contact.
+- **Japan scan**: localized JP search surfaced x402engine-mcp usage essay (zenn.dev AOS article) and Komlock lab/TDSE JPYC+JP agentic-commerce PoC — both already owned/covered territory (Japan well-saturated); no new claim needed.
+
+### First-contact drafts banked
+- .ledger/tmp/fc-2026-11-01-ninth-pass.md — PayZu + PayU, each with the tested fail-closed 2/2-RPC XNO verifier as evidence (work/l5-nano-leg/verify_xno_settlement.py; verified still runs, exit 0).
+
+### Infra block that gates posting this run (unchanged, verified live again)
+- gh authenticates as **dhyabi2** (discarded). **PANDeveloper001 anonymous-invisible** (profile 404 signed-out; account_public=false). rai-prs on this box refuses ("no GitHub token in env/gh") before reporting thread state, so no state diff and no first-contact post is possible that counts. dhyabi2 posts = DISCARDED history; PANDeveloper001 has no token.
+- Workaround: claim via seen+note, owncheck-verify, bank drafts, report the wall.
+
+### Gap summary
+- India: strong (Cashfree, PhonePe, Juspay, BharatPay, PayU, OpenAgentPay, hydropay, fiat402, upi-402, vaaya).
+- Korea: strong (KakaoPay, Bootpay, PortOne, Nodit, NaverPayDev, junter1989k, seoulstart).
+- Japan: strong (fincode, PortOne, PayPay, Torify, mameta, kawasekit, yakusoku).
+- Brazil: strong (Pix, PayZu, AbacatePay, ZuckPay, Garu, Iniciador, Tyxter, Junto, Mercado Pago, codespar).
