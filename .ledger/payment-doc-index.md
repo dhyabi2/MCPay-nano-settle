@@ -249,8 +249,27 @@ Scanned all git commits in /root/rai2 for references to:
 - gh authenticates as **dhyabi2** (discarded). **PANDeveloper001 anonymous-invisible** (profile 404 signed-out; account_public=false). rai-prs on this box refuses ("no GitHub token in env/gh") before reporting thread state, so no state diff and no first-contact post is possible that counts. dhyabi2 posts = DISCARDED history; PANDeveloper001 has no token.
 - Workaround: claim via seen+note, owncheck-verify, bank drafts, report the wall.
 
+## New Discoveries — 2026-11-02 tenth pass (GitHub-API fresh-updated scan; write path STILL blocked)
+
+### Claimed via `seen` this run (3 new verified territory targets; each CLEAR via bin/rai-bridge-owncheck before seen)
+- **rehan1020/MCP-India-Stack** (India, 3a) — MCP server for Indian APIs: GSTIN/IFSC/PAN/UPI/pincode/HSN-SAC validation. Zero-auth, offline-first, for AI agents. Python MIT, ★79 (high for region), pushed 2026-10-30, 1 open issue, non-fork. No payment rail = validation/enrichment, pristine 3a. Pitch: additive feeless XNO settlement rail beside the validation stack; complements BharatPay/UPI PSPs. https://github.com/rehan1020/MCP-India-Stack
+- **bubilife1202/crossfin** (Korea/Asia, 3b) — "The only way AI agents access Asian crypto markets. Routing engine + x402 payments across 9 exchanges." TypeScript MIT, pushed 2026-11-01 (active same day), 6 open issues, non-fork. Tier-3b: x402 on crypto rails, no Nano. Pitch: additive feeless XNO rail beside x402 for the settlement leg. https://github.com/bubilife1202/crossfin
+- **groove79/kmcp** (Korea, 3a) — Korean toolkit for AI agents: MCP servers for Naver Smart Store, Coupang, Cafe24, Toss Payments, Popbill (e-tax invoice, alimtalk), KakaoTalk, HWP public data. TypeScript MIT, created 2026-10-21, pushed 2026-10-31 (active). Broad growing KR agent-payments base, no Nano anywhere. Pitch: additive feeless XNO rail beside Toss/Naver agent rails. https://github.com/groove79/kmcp
+
+### Owncheck results this run
+- rehan1020 CLEAR, bubilife1202 CLEAR, groove79 CLEAR (all exit 0 before seen).
+- Verified owncheck still catches already-claimed siblings: api-evangelist/toss-payments correctly CONFLICTs (api-evangelist already mine via mercado-pago); PayZuAI correctly CONFLICTs.
+- **Skipped**: viztfxyz/handcart (★12, IN) — unofficial Blinkit client for one grocer, not a clean payment-rail target; Siyuan-chat/miseport (JP) — read-only product catalogs, no payment seam.
+
+### First-contact drafts banked
+- .ledger/tmp/fc-2026-11-02-tenth-pass.md — all 3, each with the tested fail-closed 2/2-RPC XNO verifier (work/l5-nano-leg/verify_xno_settlement.py; verified still runs, exit 0 usage).
+
+### Infra block that gates posting this run (unchanged, verified live again)
+- gh authenticates as **dhyabi2** (discarded). **PANDeveloper001 anonymous-invisible** (profile 404 signed-out; account_public=false). rai-prs on this box refuses ("no GitHub token in env/gh") before reporting thread state, so no state diff and no first-contact post is possible that counts. dhyabi2 posts = DISCARDED history; PANDeveloper001 has no token.
+- Workaround: claim via seen+note, owncheck-verify, bank drafts, report the wall.
+
 ### Gap summary
-- India: strong (Cashfree, PhonePe, Juspay, BharatPay, PayU, OpenAgentPay, hydropay, fiat402, upi-402, vaaya).
-- Korea: strong (KakaoPay, Bootpay, PortOne, Nodit, NaverPayDev, junter1989k, seoulstart).
+- India: strong (Cashfree, PhonePe, Juspay, BharatPay, PayU, MCP-India-Stack, OpenAgentPay, hydropay, fiat402, upi-402, vaaya).
+- Korea: strong (KakaoPay, Bootpay, PortOne, Nodit, NaverPayDev, junter1989k, seoulstart, groove79/kmcp; crossfin Asia-wide).
 - Japan: strong (fincode, PortOne, PayPay, Torify, mameta, kawasekit, yakusoku).
 - Brazil: strong (Pix, PayZu, AbacatePay, ZuckPay, Garu, Iniciador, Tyxter, Junto, Mercado Pago, codespar).
