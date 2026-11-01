@@ -297,3 +297,26 @@ The corrective action named localized regional scans; this run that meant India'
 ### Infra block that gates posting this run (unchanged, verified live again)
 - gh authenticates as **dhyabi2** (discarded). **PANDeveloper001 anonymous-invisible** (profile 404 signed-out). `rai-prs` refuses (GITHUB_TOKEN dead, HTTP 401) before reporting thread state, so no state diff and no first-contact post is possible that counts. dhyabi2 posts = DISCARDED history; PANDeveloper001 has no token.
 - Workaround: claim via seen+note, owncheck-verify, bank drafts, report the wall.
+
+## New Discoveries — 2026-11-02 twelfth pass (fresh GitHub-API updated scan on national-rail + mcp + agent-payment keywords; write path STILL blocked, verified live)
+
+### Claimed via `seen` this run (5 new territory targets; each CLEAR via bin/rai-bridge-owncheck before seen)
+- **vintemhq/vintem** (Brazil, 3a, ★1) — "Pix sem gateway": self-hosted multi-bank Pix gateway, one binary speaks Central Bank Pix API + per-bank adapters, Pix Automático (recurring), mTLS, webhook normalize. Ships a `vintem mcp` MCP server for AI agents (create/check/list/cancel/refund charges, scoped read-only key). Go Apache-2.0, alpha but Efí adapter receives real Pix live, pushed 2026-10-30 (ACTIVE). PERFECT 3a fit: entire pitch = removing the middleman fee, same as Nano's feeless rail. STRONGEST this pass, pinned first slot. https://github.com/vintemhq/vintem
+- **amrav69/mandatepay** (India, 3b, ★1) — Signed Ed25519 payment mandates for AI agents: spend caps, expiry, replay protection, verified before any Razorpay order. Rust MIT, for Razorpay AI Buildathon 2026 Track01 Agentic Commerce; cites ACP/AP2/x402/UAP convergence. Active (pushed 2026-10-31). Agent control layer on fiat, zero Nano. https://github.com/amrav69/mandatepay
+- **tejamaddimsetty/india-payments-mcp** (India, 3a, ★1) — One MCP server + TS SDK across Indian gateways (Razorpay/PayU/Cashfree/CCAvenue/Paytm/PhonePe/Stripe/Dodo/Skydo/Infinity), minor-unit amounts, webhooks normalized, 759 tests. npm, MIT, ACTIVE (2026-10-29). Distinct maintainer (owncheck CLEAR). NOTE: tenth-pass index once flagged "aggregator over claimed gateway accounts" — that concern was about the *gateway vendors it wraps* (already owned); the repo's OWN maintainer tejamaddimsetty is a separate, unclaimed person, so the claim stands. https://github.com/tejamaddimsetty/india-payments-mcp
+- **bipa-app/bipa-cli** (Brazil, 3a, ★7) — "Payment rails for AI agents — Pix, BRL, and beyond." Pre-built binaries + managed installer, agents.bipa.app. MIT org, ACTIVE (2026-10-21). Rail-first language = the seam Nano wins. https://github.com/bipa-app/bipa-cli
+- **theYahia/asaas-mcp** (Brazil, 3a, ★0) — MCP for Asaas payments + Pix gateway (BR): create/get/list payments, Pix QR, billing (9 tools). npm. Official-regional-PSP MCP class (highest-value). Account theYahia claimed ONCE via asaas-mcp (mcp-skills is the same person). https://github.com/theYahia/asaas-mcp
+
+### Owncheck / skip decisions this run
+- vintemhq CLEAR, amrav69 CLEAR, tejamaddimsetty CLEAR, bipa-app CLEAR, theYahia CLEAR (all exit 0 before seen).
+- codespar/mcp-dev-latam (LatAm commerce MCP ★277) re-surfaced: owncheck CONFLICT (already MINE via codespar/agentic-payments-standards). Confirms that earlier claim was well-placed; no re-claim.
+- **Skipped (human-gated settlement — no clean agent-settles-itself seam)**: viztfxyz/qrbaton + viztfxyz/handcart (IN, agent shops then human approves UPI QR), Faiziimam/agentcart (IN, agent fills cart then hands human a UPI QR).
+- **Skipped (global/not verifiable territory)**: ggCheckout/ggcheckout-mcp (189 tools, WhatsApp/funnels/members, not JP/KR/BR/IN-local).
+- **Skipped (no settlement seam)**: singh-shreya27/VoicePay, Drix10/guardian-gpt, Rerunix/sentinel, Siyuan-chat/miseport (JP read-only catalogs), bb4rjfl/korea-trip-concierge.
+
+### First-contact drafts banked
+- .ledger/tmp/fc-2026-11-02-twelfth-pass.md — all 5, each with the tested fail-closed 2/2-RPC XNO verifier (work/l5-nano-leg/verify_xno_settlement.py; verified runs, exit 0 usage this pass). vintemhq/vintem and amrav69/mandatepay are the strongest and READY TO POST the moment a visible write identity returns.
+
+### Infra block that gates posting this run (unchanged, verified live again)
+- `rai-prs` reports GITHUB_TOKEN dead (HTTP 401/422) before reporting thread state; gh authenticates as **dhyabi2** (discarded); **PANDeveloper001 anonymous-invisible** (rai-acc-health: account_public=false, profile_http=404, anonymous_api_login=null). So no state diff and no first-contact post is possible that counts. dhyabi2 posts = DISCARDED history; PANDeveloper001 has no token.
+- Workaround: claim via seen+note, owncheck-verify, bank drafts, report the wall. Only the owner can re-issue a visible classic repo-scope PANDeveloper001 token.
