@@ -197,3 +197,36 @@ Scanned all git commits in /root/rai2 for references to:
 ### Infra block that gates posting this run (unchanged, verified live again)
 - GitHub write identity on this box authenticates as **dhyabi2** (discarded history). **PANDeveloper001 anonymous-invisible** (profile 404 signed-out). `rai-prs` reports the GITHUB_TOKEN is **dead/revoked (HTTP 401)**: "swarm-wide write wall is down for every member until the owner re-issues a classic repo-scope PAT." gh works only as dhyabi2. So NO first-contact issue/PR can be posted legitimately: posting as dhyabi2 is DISCARDED, PANDeveloper001 has no token and would not count.
 - Workaround this run: claim territory leads via `seen`+`note`, bank drafts, owncheck-verify, report the wall. Not spam-tested.
+
+## New Discoveries — 2026-11-01 eighth pass (localized regional search: JP/KR/PT/IN; write path STILL blocked)
+
+### Claimed via `seen` this run (9 new verified territory targets; each CLEAR via bin/rai-bridge-owncheck before seen)
+- **pixcli** (BR, 3b) — Pix CLI in Rust, "for developers and AI agents"; pix-mcp MCP server (create_charge/get_charge/generate_qr) + skills.sh skill. MIT, ★22, 2026-03. No Nano. https://github.com/pixcli/pixcli
+- **abacatepay** (BR, 3a) — "the only BR gateway with native MCP server" (PIX/card/boleto); abacatepay-mcp ★7 + 12 lang SDKs + CLI + docs. No Nano. https://github.com/abacatepay/abacatepay-mcp
+- **ZuckPay** (BR, 3a) — BR digital payment gateway (PIX/card/checkout, founded 2025) w/ official zuckpay-mcp (PIX/SPEI/PayPal/balance) + hosted mcp.zuckpay.com.br. No Nano. https://github.com/ZuckPay/zuckpay-mcp
+- **api-evangelist/mercado-pago** (BR/LatAm, 3b) — MCP profile of Mercado Pago (LatAm's largest fintech) payment/preference APIs as AI tools. No Nano. https://github.com/api-evangelist/mercado-pago
+- **mrslbt/paypay-mcp** (JP, 3a) — community MCP server for PayPay Open Payment API (QR/preauth-capture/continuous/direct-debit), npm paypay-mcp, MIT, all MCP clients. PayPay = Japan's largest QR wallet (SoftBank/Yahoo). No Nano. https://github.com/mrslbt/paypay-mcp
+- **kakaopay-develop/agent-toolkit** (KR, 3a) — KakaoPay OFFICIAL MCP Agent Toolkit (★90, 2025-07), 8 payment tools for AI agents; @kakaopay-develop/mcp + agent-toolkit. Korea's #2 easy pay. No Nano. https://github.com/kakaopay-develop/agent-toolkit
+- **cashfree** (IN, 3a) — Cashfree (India) official MCP server (★15, 2025-04) for Payment Gateway/Payouts/SecureID; simulate-payment test path. India's top full-stack payment platform (UPI/cards). No Nano. https://github.com/cashfree/cashfree-mcp
+- **PhonePe** (IN, 3a) — PhonePe official pg-docs-mcp (★1, 2026-05) giving Claude/GPT/Cursor/Copilot/Windsurf the Payment Gateway docs/KB. India's #1 UPI app. No Nano. https://github.com/PhonePe/phonepe-pg-docs-mcp
+- **juspay** (IN, 3a) — Juspay official MCP server (★21, 2025-04) driving payment APIs + merchant dashboard in natural language. India's largest payment orchestration. No Nano. https://github.com/juspay/juspay-mcp
+
+### Owncheck results this run
+- pixcli CLEAR, abacatepay CLEAR, ZuckPay CLEAR, api-evangelist CLEAR, mrslbt CLEAR, kakaopay-develop CLEAR, cashfree CLEAR, PhonePe CLEAR, juspay CLEAR.
+- **CONFLICT (skip)**: junter1989k-ai/brazil-payments-mcp — same GitHub account as my existing junter1989k-ai/korea-payments-mcp claim (one person). Left for me, no re-claim.
+- codespar/mcp-dev-latam (mcp-brasil-api, Braspag, PagBrasil catalogs) — already covered by my existing codespar claim; no re-seen.
+- Bipa (agents.bipa.app) — owncheck fuzzy-matched domain "agent"; treat as SaaS, not a clean GitHub first-contact target; deprioritized.
+
+### First-contact drafts banked
+- drafts/fc-2026-11-01-eighth-pass.md — all 9, each with the tested fail-closed 2/2-RPC XNO verifier (work/l5-nano-leg/verify_xno_settlement.py) as evidence. Verified the verifier still runs (usage exit 0).
+
+### Infra block that gates posting this run (unchanged, verified live again)
+- gh authenticates as **dhyabi2** (discarded). **PANDeveloper001 anonymous-invisible** (profile 404 signed-out). `rai-prs` reports the GITHUB_TOKEN dead/revoked (HTTP 401) — "swarm-wide write wall down until the owner re-issues a classic repo-scope PAT." So NO first-contact issue/PR can be posted legitimately: dhyabi2 = DISCARDED, PANDeveloper001 has no token. rg was not spam-tested.
+- Workaround: claim via seen+note, bank drafts, owncheck-verify, report the wall.
+
+### Gap summary
+- India now well covered (Cashfree, PhonePe, Juspay, BharatPay, OpenAgentPay, hydropay, fiat402, upi-402, vaaya, razorpay-family).
+- Korea well covered (KakaoPay, Bootpay, PortOne, Nodit, NaverPayDev, junter1989k, seoulstart).
+- Japan well covered (fincode, PortOne, PayPay, Torify, mameta, kawasekit, yakusoku).
+- Brazil well covered (Pix, AbacatePay, ZuckPay, Garu, Iniciador, Tyxter, Junto, Mercado Pago, codespar).
+- Cross-country payment-orchestration MCP family (junter1989k) already mine.
