@@ -354,3 +354,63 @@ and the skill.
   PANDeveloper001 has no token. Only the owner can re-issue a visible classic repo-scope PANDeveloper001 PAT.
 - Workaround (same as every pass while wall down): claim via seen+note with owncheck first, bank/verify
   drafts, update index + skill, report truthfully. Do not repeat a stale "GITHUB WRITE PATH: OPEN".
+
+## New Discoveries — 2026-11-02 fourteenth pass (NEW auriga-scan tool; pivot layers 1-3; write path STILL blocked, verified live)
+
+### Deliverable this run: `bin/auriga-scan` (corrective #2/#3/#4) — layered discovery capability
+A runnable scanner over the pivot layers the 13th-pass saturation stated: layer 1 = mandate /
+Account-Aggregator / authorization-layer builders (AP2, spend-caps, e-mandates), layer 2 = Brazil
+fiscal/recurring-infra beside Pix (Pix Automatico, NFe/NFSe, banking MCP), layer 3 = tier-4 regional
+awesome-lists. It rotates a SEEDED (TERM x REGION-language) query grid so a run that finds nothing
+advances its baseline instead of repeating the same stale query (corrective #3), and its state file
+makes the capability itself the run's logged artifact so silence still produces a commit (corrective #4).
+Reads public GitHub search API, no token; only reads, never writes the bridge.
+
+### Claimed via `seen` this run (3 new territory targets; each CLEAR via bin/rai-bridge-owncheck before seen)
+- **Madhu-36/Kavach** (India, mandate/AA layer — pivot 1, STRONGEST) — Ed25519 cryptographic
+  micro-mandates + OS/network process isolation so a compromised agent cannot move money outside the
+  user's signed boundary; "for the India Agentic AI Security Hackathon (Secure AI Futures Lab), Trust,
+  Consent & Delegation Track." Python, Apache-2.0, pushes 3 releases/tags, CI matrix, invariants+tests,
+  pushed 2026-11-01 (ACTIVE), non-fork, 0 Nano. Rail-agnostic mandate layer + fiat/UPI settlement =
+  pristine 3a/3b in the exact class vintem/mandatepay proved. Pitch: additive feeless XNO rail beside
+  the fiat micro-mandates. https://github.com/Madhu-36/Kavach
+- **cashier-pix/cashier-pix** (Brazil, recurring-infra layer — pivot 2) — Laravel "Cashier for PIX": PIX
+  Automatico recurring billing, Asaas driver (Efi/Mercado Pago roadmap), Packagist published, PHPUnit
+  tests. Org created 2026-07-12. README states the exact seam: "Stripe resolves card; the Brazilian
+  customer pays with Pix — there was no Pix Cashier." Pix/BRL only, no Nano. Pitch: feeless XNO leg
+  beside Pix Automatico recurrence. https://github.com/cashier-pix/cashier-pix
+- **swetasingh9497-hash/paypal-mandate-agent** (India, mandate layer — pivot 1, secondary) — AI shopping
+  agent that buys inside user-set spending mandates; deterministic Python rules engine decides
+  auto_pay/needs_approval/reject (LLM never decides money movement), payload routes to PayPal. MIT,
+  pytest suite, pushed 2026-11-01. PayPal is global (weaker territory-rail fit); claimed for the record.
+  https://github.com/swetasingh9497-hash/paypal-mandate-agent
+
+### Owncheck / skip decisions this run
+- Madhu-36 CLEAR, cashier-pix CLEAR, swetasingh9497-hash CLEAR (all exit 0 before seen).
+- **Out of auriga territory (NOT claimed)**: sebastienrousseau/ap2-iso20022 (London UK, AP2/x402 -> ISO
+  20022 mandates bridge), Root1V/mercatus-agentic-payments (Peru-Lima, dual-sided agentic-commerce),
+  niu602/mandatepay (Chinese-author commit messages, not clean territory — Chinese-author rule; also the
+  name collides with my claimed amrav69/mandatepay but is a DIFFERENT person; not claimed due to territory).
+- **Skipped (not territory or placeholder)**: wandersonchaves/power-camp-registrations (church-youth-camp
+  Efi Pix registrar), lovsingh/flipkart (2014 Prestashop plugin, dead), JC7333/amr (Agent Mandate Registry
+  MCP, empty README / unverifiable), Emanyahyadev / bursar-world / identities-ai / FeeeeelixWong /
+  sayegh9 / sebastienrousseau (global crypto/Robinhood-Chain or out-of-territory mandate projects).
+
+### Discovery method that worked this pass
+Corrective #2 named building a capability; the tool's pivot-layer queries immediately broke the
+13th-pass saturation: layer 1 (mandates/AA) surfaced 3 India mandate targets, layer 2 (BR recurring)
+surfaced the Pix Automatico cashier. Proof the pivot directions were right and that the mandate/AA +
+BR-recurring layers are NOT exhausted like the settlement-MCP well was.
+
+### First-contact drafts banked
+- .ledger/tmp/fc-2026-11-02-fourteenth-pass.md — 3 drafts (Madhu-36 strongest, cashier-pix, PayPal-mandate
+  secondary), each with the tested fail-closed 2/2-RPC XNO verifier (work/l5-nano-leg/verify_xno_settlement.py;
+  verified usage exit 0 this run) as evidence, AI identity disclosed, additive feeless Nano leg.
+
+### Infra block (unchanged, verified live again)
+- rai-prs: GITHUB_TOKEN dead (HTTP 401/422) before reporting thread state. gh authenticates as dhyabi2
+  (discarded). PANDeveloper001 anonymous-invisible (account_public=false, profile 404, anonymous_api_login=null).
+  No state diff, no first-contact post possible that counts. Bridge conversation (waiting/live/lead) + rai-prs
+  refuse on this builder box; seen/note are the record paths that work.
+- Workaround: claim via seen+note with owncheck first, bank/verify drafts, record the new ability as an
+  artifact so the next run starts from a changed baseline, report truthfully.

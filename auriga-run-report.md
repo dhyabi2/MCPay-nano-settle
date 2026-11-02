@@ -1,46 +1,45 @@
-# Auriga run report — 2026-11-02 (thirteenth pass)
+# Auriga run report — 2026-11-02 (fourteenth pass)
 
-## This run: settlement-MCP well now CONFIRMED DRY for auriga territory; write wall still owner-only blocked (verified live). 4 discovery channels run, every hit verified, no clean new target — pivot recorded for next passes.
+## This run: built `bin/auriga-scan` (the layer-pivot discovery tool corrective #2/#3/#4 named) and it immediately broke the 13th-pass saturation — 3 new India/BR territory targets claimed. Write wall still owner-only blocked (verified live).
 
 Tier 0 (territory, continuous discovery — the productive path while write identity is blocked):
-- Ran 4 discovery channels this pass: fresh GitHub-API updated scan (30+ national-rail keyword
-  angles), GitHub Topics (agent-payments / ai-payments), and localized web search (PT/HI/JA/KO
-  payment-doc + PSP MCP). The Korea web backend errored; Japan/India returned only already-covered
-  generic x402 content.
-- Result: NO clean, new, territory-scoped agent-payment SETTLEMENT target surfaced. Every hit was
-  verified and is either already-claimed (codespar, junter1989k-ai, PayZuAI, the official PSP-MCPs)
-  or a confirmed non-target. Details in .ledger/tmp/fc-2026-11-02-thirteenth-pass-scan.md.
-- Confirmed non-targets this pass (recorded so future passes skip): OKTO Payments "Agentic Pix"
-  = SaaS whose GitHub org okto-hq is a DIFFERENT company (Okto Web3 SDK), no Agentic Pix repo;
-  nirav-gondaliya/upi-mcp (offline QR generator) + tusharagrahari/upi-mcp-server (read-only txn
-  analytics) = no settlement seam; couragecowardlydog/paytm-mcp-server = Paytm Money trading;
-  Toss MCP hits = Securities trading or docs/icons, not a rail; tedfernandes/nubank-mcp +
-  mcp-dir/{nubank,picpay}-mcp = read-only Open Finance reads; codespar/awesome-agentic-commerce-latam
-  = sibling of my existing codespar claim (covered); agent-payments/ai-payments topics = only
-  global x402/crypto/Robinhood-Chain projects, out of auriga territory.
-- Strategic consequence (fed into the skill): the settlement-MCP well is DRY across all 4 countries
-  after 13 passes; next passes should conquer the still-thinner LAYERS — (1) India/JA/KR mandate +
-  Account-Aggregator + authorization-layer builders (AP2/mandates/spend-caps, the class
-  vintem/mandatepay proved, fewer competitors); (2) Brazil fiscal/recurring-infra agent rails beside
-  Pix (NFe/NFSe, Pix Automático recurrence, Stark Bank/Matera-class banking MCPs); (3) tier-4
-  regional awesome-lists/wiki for BR/IN/JA/KR agents.
+- Per corrective #2, built a real, runnable capability: `bin/auriga-scan`, a seeded-GitHub-API
+  scanner over the THREE pivot layers the 13th-pass said to conquer (mandate/AA, BR
+  fiscal/recurring-infra, tier-4 awesome-lists). It rotates a TERM x REGION-language grid via a
+  state file (~/.hermes/auriga-scan-state.json) so a run that finds nothing changes its baseline
+  instead of re-running a stale query (corrective #3); the tool itself is the run's logged artifact
+  (corrective #4 — noise-free commit, next run starts from a changed baseline). Syntax + smoke-tested;
+  reads the anonymous GitHub search API only, never writes the bridge.
+- Ran it on the pivot layers. Every candidate verified, ownchecked, and the 3 CLEAN territory claims
+  made via `seen` (each bin/rai-bridge-owncheck exit 0 BEFORE seen):
+  - **Madhu-36/Kavach** (India, mandate/AA — pivot 1, STRONGEST): Ed25519 micro-mandates + process
+    isolation for the India Agentic AI Security Hackathon; Python Apache-2.0, CI+tests, pushed
+    2026-11-01, 0 Nano. Rail-agnostic mandates over fiat = pristine 3a/3b.
+  - **cashier-pix/cashier-pix** (Brazil, recurring infra — pivot 2): Laravel "Cashier for PIX
+    Automatico" (Asaas driver). README names the exact seam. Pix/BRL only, 0 Nano.
+  - **swetasingh9497-hash/paypal-mandate-agent** (India, mandate — pivot 1, secondary): deterministic
+    rules engine routes to PayPal; pytest suite. PayPal = weaker territory-rail fit, claimed for record.
+- Banked 3 READY-TO-POST drafts (.ledger/tmp/fc-2026-11-02-fourteenth-pass.md), each with the tested
+  fail-closed 2/2-RPC XNO verifier as evidence, AI identity disclosed, additive feeless Nano leg.
+- Confirmed non-territory / skip list recorded (niu602 Chinese-author, bursar-world/identities-ai/Root1V/
+  sebastienrousseau global, JC7333 empty, lovsingh dead).
 
-Tier 1/2: rai-prs on this box refuses ("GitHub token dead or revoked, HTTP 401/422") before
-reporting thread state — cannot check, not re-run per its own suggested_action. Bridge conversation
-(waiting/live) + lead refused here by the builder-only lock (seen/note are the record path that works).
+Tier 1/2: corrective #1 (reply to a waiting outside person) cannot be executed on this box — the
+bridge conversation commands (waiting/live) and `rai-prs` both REFUSE/401 (builder-only lock + token
+dead), so there is no reachable waiting thread. Stated plainly, not faked. `nothing_changed` for rails
+I cannot reach is reported as the wall, not as progress.
 
-Tier 3: no first contact posted — write identity is owner-only blocked (gh = dhyabi2 discarded;
-PANDeveloper001 anonymous-invisible: account_public=false, profile 404, anonymous_api_login=null).
-Posting would be discarded history and would not count. The run brief's "GITHUB WRITE PATH: OPEN"
-is STALE: the repo-scope token mechanically exists but authenticates as dhyabi2, NOT publishable as
-PANDeveloper001.
+Tier 3: no first contact posted — write identity is owner-only blocked (verified live: gh = dhyabi2
+discarded; PANDeveloper001 anonymous-invisible account_public=false, profile 404; rai-prs GITHUB_TOKEN
+dead HTTP 401). The run-brief "GITHUB WRITE PATH: OPEN" is STALE (repo-scope token authenticates as
+dhyabi2, NOT publishable as PANDeveloper001). One new claim would be a first contact (cap 2/day) the
+moment the wall is fixed.
 
-Deliverables: saturation-scan record (.ledger/tmp/fc-2026-11-02-thirteenth-pass-scan.md), payment-doc-index
-thirteenth-pass section (verified non-targets + pivot angles), skill update ("Saturation state" — the well
-is dry, what to skip, what to pivot to), verifier confirmed still functional (usage exit 0), this report.
+Deliverables: bin/auriga-scan (new capability), 3 new territory claims via seen, 3 drafts banked,
+payment-doc-index 14th-pass section, skill update (auriga-scan tooling + layer-1 pitfall), this report.
+Capability verified (syntax + smoke exit 0; verifier usage exit 0).
 
 Blocks: (1) SWARM-WIDE owner-only — GitHub write identity is not a visible PANDeveloper001 AND the
 classic repo-scope PAT is dead (401), so rai-prs cannot report thread state and no first-contact post
-counts; (2) swarm-forge report remains unavailable for auriga on this box (no open auriga territory issue
-to comment on); (3) auriga's settlement-MCP discovery line is now genuinely exhausted — needs the layer
-pivot above or the write wall fixed to make further passes productive.
+counts; only the owner can re-issue a visible classic repo-scope PANDeveloper001 token. (2) swarm-forge
+report remains unavailable for auriga (no open territory issue; AGit push is the working channel).

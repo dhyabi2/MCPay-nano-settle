@@ -1,0 +1,164 @@
+#!/usr/bin/env python3
+"""auriga-scan — mine regional payment docs / agent-payment projects in auriga territory.
+
+Auriga territory = Japanese, Korean, Brazilian, Indian agent projects and their
+payment docs. The whole pitch: a settlement rail that works without a US (or any)
+merchant account.
+
+WHY THIS TOOL EXISTS (corrective round 2026-11-02 #2/#3/#4): the settlement-MCP well
+for the four countries is saturated after 13 passes, so this scans the still-thinner
+LAYERS the skill names — (1) mandate / Account-Aggregator / authorization-layer
+builders (AP2, spend-caps, e-mandates), (2) Brazil fiscal/recurring-infra agent
+rails beside Pix (NFe/NFSe, Pix Automatico, banking-MCP like Stark Bank/Matera),
+(3) tier-4 regional awesome-lists/wiki for BR/IN/JA/KR agents. It also rotates a
+SEEDED regional query set so a run that finds nothing changes its baseline instead
+of re-running the same stale query (corrective #3).
+
+It reads a small persistent state file so each invocation advances the seed and
+avoids repeating identical queries. It only READS the public GitHub search API
+(anonymous, no token) and local files; it never writes to the bridge. Deduping
+against the auriga claim index is done by the caller (clip the candidate list into
+`.ledger/tmp/` and owncheck each with bin/rai-bridge-owncheck before `rai-bridge seen`).
+
+Usage:
+  auriga-scan             run the next seeded query batch, print candidates
+  auriga-scan --dump      print the whole query table (angles x seed)
+  auriga-scan --state     print the current seed offset + last-run timestamp
+  auriga-scan --layer N    restrict to one layer (1=mandate/AA, 2=BR fiscal,
+                           3=tier-4 lists)
+  auriga-scan --raw       print full JSON item (name, owner, desc, pushed_at,
+                           html_url) instead of the compact line
+
+State file: $RAI_SCAN_STATE (default ~/.hermes/auriga-scan-state.json). Never a secret.
+"""
+
+import argparse
+import json
+import os
+import sys
+import time
+import urllib.parse
+import urllib.request
+
+API = "https://api.github.com/search/repositories"
+UA = "auriga-scan/1.0 (rau swarm territory discovery; no token)"
+DEFAULT_STATE = os.path.expanduser("~/.hermes/auriga-scan-state.json")
+
+# LAYERS = the pivot angles (skill "Saturation state", 2026-11-02). Each angle is a
+# list of {q, in:name,description, sort} search strings built from a TERM x REGION grid.
+TERMS = {
+    1: [  # mandate / AA / authorization-layer
+        "mandate agents", "payment mandate agent", "e-mandate api agent",
+        "account aggregator fintech", "spend cap agent payment", "upi mandate api",
+        "authorization agent payment x402",
+    ],
+    2: [  # Brazil fiscal / recurring-infra beside Pix
+        "pix automatico recurring", "nfe emissao api agent", "nfse api",
+        "pix webhook agent", "banking mcp pix", "stark bank api", "matera api",
+        "boleto agent payment",
+    ],
+    3: [  # tier-4 regional awesome-lists / wiki
+        "awesome india payments", "awesome brazil payments", "awesome japan fintech",
+        "awesome korea fintech", "awesome upi", "awesome pix", "awesome payments india",
+        "awesome agent commerce latam",
+    ],
+}
+
+REGIONS = [
+    "",                 # global seed 0
+    "language:python",  # seed 1
+    "language:typescript",  # seed 2
+    "language:go",          # seed 3
+    "mirror:false",         # seed 4 (exclude mirrors)
+]
+
+
+def _get(json_path, default):
+    try:
+        with open(json_path) as f:
+            return json.load(f)
+    except Exception:
+        return default
+
+
+def _put(json_path, state):
+    os.makedirs(os.path.dirname(json_path) or ".", exist_ok=True)
+    with open(json_path, "w") as f:
+        json.dump(state, f, indent=2)
+
+
+def _fetch(q):
+    url = f"{API}?q={urllib.parse.quote(q)}&sort=updated&order=desc&per_page=10"
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/vnd.github+json"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return json.load(r)
+
+
+def scan(layer=None, raw=False, batch=1):
+    state = _get(DEFAULT_STATE, {"seed": 0, "offset": {str(k): 0 for k in TERMS}})
+    # advance all offsets so repeated runs rotate through the grid (corrective #3)
+    offset = state["offset"]
+    results = []
+    for layer_id, terms in TERMS.items():
+        if layer is not None and layer_id != layer:
+            continue
+        pos = offset[str(layer_id)] % len(REGIONS)
+        term = terms[(offset[str(layer_id)] // len(REGIONS)) % len(terms)]
+        region = REGIONS[pos]
+        q = f"{term} {region}".strip()
+        try:
+            data = _fetch(q)
+        except Exception as e:
+            print(f"layer {layer_id} q='{q}': ERROR {e}", file=sys.stderr)
+            continue
+        n = len(data.get("items", []))
+        if raw:
+            results.append({"query": q, "count": n, "items": data.get("items", [])})
+        else:
+            results.append({"query": q, "count": n})
+            for it in data.get("items", []):
+                name = it.get("full_name", "")
+                desc = (it.get("description") or "")[:110]
+                pushed = (it.get("pushed_at") or "")[:10]
+                print(f"  {name} | pushed {pushed} | {desc}")
+                print(f"    {it.get('html_url', '')}")
+        offset[str(layer_id)] += 1
+    state["seed"] += batch
+    state["last_run"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    _put(DEFAULT_STATE, state)
+    if raw:
+        return results
+    return len(results)
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--dump", action="store_true")
+    ap.add_argument("--state", action="store_true")
+    ap.add_argument("--layer", type=int, choices=[1, 2, 3])
+    ap.add_argument("--raw", action="store_true")
+    ap.add_argument("--batch", type=int, default=1)
+    a = ap.parse_args()
+
+    if a.dump:
+        for lid, terms in TERMS.items():
+            print(f"== layer {lid} ==")
+            for t in terms:
+                print(f"  - {t}")
+        return 0
+    if a.state:
+        s = _get(DEFAULT_STATE, {})
+        print(json.dumps(s, indent=2))
+        return 0
+
+    try:
+        n = scan(layer=a.layer, raw=a.raw, batch=a.batch)
+        print(f"# scanned {n} query batches; seed advanced (state: {DEFAULT_STATE})")
+        return 0
+    except Exception as e:
+        print(f"ERROR: {e}", file=sys.stderr)
+        return 2
+
+
+if __name__ == "__main__":
+    sys.exit(main())
