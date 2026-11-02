@@ -320,3 +320,37 @@ The corrective action named localized regional scans; this run that meant India'
 ### Infra block that gates posting this run (unchanged, verified live again)
 - `rai-prs` reports GITHUB_TOKEN dead (HTTP 401/422) before reporting thread state; gh authenticates as **dhyabi2** (discarded); **PANDeveloper001 anonymous-invisible** (rai-acc-health: account_public=false, profile_http=404, anonymous_api_login=null). So no state diff and no first-contact post is possible that counts. dhyabi2 posts = DISCARDED history; PANDeveloper001 has no token.
 - Workaround: claim via seen+note, owncheck-verify, bank drafts, report the wall. Only the owner can re-issue a visible classic repo-scope PANDeveloper001 token.
+
+## New Discoveries — 2026-11-02 thirteenth pass (saturation check; write path STILL blocked, verified live)
+
+### Result: NO clean new settlement target — the settlement-MCP well is now DRY for auriga territory.
+Ran 4 discovery channels: fresh GitHub updated-scan (30+ national-rail/resilience keyword angles incl.
+upi x402, bhim, picpay/nubank/boleto/linepay/dpayment, pix automatico, efi/banco-inter/sicredi/icici/kotak,
+sicoob/caixa/inter/paytm/phonepay mcp), GitHub Topics (agent-payments 30 / ai-payments), localized web
+(PT/HI/JA/KO payment-doc + PSP MCP). Every hit verified and is already-claimed or a confirmed non-target.
+
+### Confirmed non-targets this pass (recorded so future passes skip them — see skill "Saturation state")
+- OKTO Payments "Agentic Pix" (BR, 2026-10-19): SaaS (oktopayments.com) whose GitHub org okto-hq is a
+  DIFFERENT company (Okto Web3 SDK) — no Agentic Pix repo; not a GitHub first-contact target.
+- nirav-gondaliya/upi-mcp, tusharagrahari/upi-mcp-server: offline UPI QR generator / read-only txn analytics
+  — no settlement seam.
+- couragecowardlydog/paytm-mcp-server: Paytm Money trading, not payments.
+- Toss MCP hits (khwee2000, chabinhwang, cha2hyun, ...): Toss SECURITIES trading or docs/icons, not a rail.
+- tedfernandes/nubank-mcp, mcp-dir/{nubank,picpay}-mcp: read-only Open Finance balance/statement read.
+- codespar/awesome-agentic-commerce-latam: codespar already MINE; sibling of claimed account → covered.
+- agent-payments/ai-payments topics: only global x402/crypto/Robinhood-Chain projects, out of auriga territory.
+
+### Strategic consequence (feed into future passes)
+Territory is saturated on the settlement-MCP class across all 4 countries. Next passes should conquer the
+still-thinner LAYERS instead: (1) mandate/AA/authorization-layer builders (India/JA/KR AP2+account-aggregator);
+(2) Brazil fiscal/recurring-infra agent rails beside Pix (NFe/NFSe, Pix Automatico, banking-MCP like
+Stark Bank/Matera); (3) tier-4 regional awesome-lists/wiki. Details in .ledger/tmp/fc-2026-11-02-thirteenth-pass-scan.md
+and the skill.
+
+### Infra block (unchanged, verified live again)
+- rai-prs: GITHUB_TOKEN dead (HTTP 401/422). gh authenticates as dhyabi2 (discarded). PANDeveloper001
+  anonymous-invisible (rai-acc-health: account_public=false, profile_http=404, anonymous_api_login=null).
+  No thread-state diff and no first-contact post possible that counts. dhyabi2 posts = DISCARDED history;
+  PANDeveloper001 has no token. Only the owner can re-issue a visible classic repo-scope PANDeveloper001 PAT.
+- Workaround (same as every pass while wall down): claim via seen+note with owncheck first, bank/verify
+  drafts, update index + skill, report truthfully. Do not repeat a stale "GITHUB WRITE PATH: OPEN".
