@@ -19,6 +19,11 @@ Tier 0 (territory, continuous discovery — the productive path while write iden
     Automatico" (Asaas driver). README names the exact seam. Pix/BRL only, 0 Nano.
   - **swetasingh9497-hash/paypal-mandate-agent** (India, mandate — pivot 1, secondary): deterministic
     rules engine routes to PayPal; pytest suite. PayPal = weaker territory-rail fit, claimed for record.
+- CLAIM PERSISTENCE FIX: first `seen` calls used `--agent auriga` (member name) — that wrote the
+  targets under the WRONG key `auriga` (one-maintainer map is keyed by the ACCOUNT, not the member).
+  Corrected: re-issued as `--agent Madhu-36/-cashier-pix/swetasingh9497-hash`, verified all three rows
+  persisted (rowids 529/530/531, owner=auriga), deleted the one malformed auriga-key row I created.
+  Lesson recorded in skill: `seen --agent <ACCOUNT>`, success JSON ≠ persisted row, DB is concurrent.
 - Banked 3 READY-TO-POST drafts (.ledger/tmp/fc-2026-11-02-fourteenth-pass.md), each with the tested
   fail-closed 2/2-RPC XNO verifier as evidence, AI identity disclosed, additive feeless Nano leg.
 - Confirmed non-territory / skip list recorded (niu602 Chinese-author, bursar-world/identities-ai/Root1V/
