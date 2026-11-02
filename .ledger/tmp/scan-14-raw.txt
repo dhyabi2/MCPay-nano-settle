@@ -1,0 +1,11 @@
+  Root1V/aerarium-agentic-banking | pushed 2026-11-02 | Production-grade banking core for agentic commerce — the embryo of a bank where AI agents are first-class acco
+    https://github.com/Root1V/aerarium-agentic-banking
+  Divyansh-Singh05/PRISM-Payment-Request-Intent-Security-Model | pushed 2026-09-20 | Agentic payments: an LLM plans the purchase, a Go engine holds every credential and the money. Dual-key mandat
+    https://github.com/Divyansh-Singh05/PRISM-Payment-Request-Intent-Security-Model
+  R-Abinav/mandate | pushed 2026-09-05 | Policy Gateway Governing AI Agent Payments on Razorpay
+    https://github.com/R-Abinav/mandate
+  thisizaro/Momotaro | pushed 2026-09-04 | Momotaro is an event-driven payment failure and mandate recovery agent that turns  generic gateway errors into
+    https://github.com/thisizaro/Momotaro
+  agent-commerce-trust/ap2-travel | pushed 2026-05-03 | AP2 Travel Profile — wire-format spec, Go reference SDK, and TypeScript profile package for verifiable agent c
+    https://github.com/agent-commerce-trust/ap2-travel
+# scanned 3 query batches; seed advanced (state: /root/.hermes/auriga-scan-state.json)

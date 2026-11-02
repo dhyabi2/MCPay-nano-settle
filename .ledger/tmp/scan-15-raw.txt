@@ -1,0 +1,21 @@
+  robertolocatelli81-dev/agent-payment-chain | pushed 2026-11-02 | Offline verifier of AI-agent payments: AP2 mandate, x402 payment and on-chain settlement, checked end to end (
+    https://github.com/robertolocatelli81-dev/agent-payment-chain
+  swetasingh9497-hash/paypal-mandate-agent | pushed 2026-11-02 | AI shopping agent that buys within user-defined spending rules, using PayPal for payments.
+    https://github.com/swetasingh9497-hash/paypal-mandate-agent
+  niu602/mandatepay | pushed 2026-11-02 | MandatePay - Give AI agents a cage for spending: constraint-gated autonomous purchasing with auditable three-l
+    https://github.com/niu602/mandatepay
+  Root1V/aerarium-agentic-banking | pushed 2026-11-02 | Production-grade banking core for agentic commerce — the embryo of a bank where AI agents are first-class acco
+    https://github.com/Root1V/aerarium-agentic-banking
+  sebastienrousseau/ap2-iso20022 | pushed 2026-11-02 | Bridge AP2 / x402 agent-payment mandates into wire-valid ISO 20022 pain.001 / pacs.008 records, with guardrail
+    https://github.com/sebastienrousseau/ap2-iso20022
+  oleratothubakgale/chaperone | pushed 2026-11-01 | Payment firewall for AI agents. An MCP server that checks every PayPal payment request against a spending mand
+    https://github.com/oleratothubakgale/chaperone
+  Root1V/mercatus-agentic-payments | pushed 2026-11-01 | Production-grade dual-sided framework for agentic commerce — AI agents that discover, pay for, and monetize se
+    https://github.com/Root1V/mercatus-agentic-payments
+  probarion/probarion | pushed 2026-11-02 | Spend by mandate. Prove every payment. A mandate layer for AI agents on NEAR.
+    https://github.com/probarion/probarion
+  Mesher589/paydlux | pushed 2026-11-01 | Paydlux — payments for AI agents that a human approves. Spending mandates enforced on the Stellar ledger. 2-of
+    https://github.com/Mesher589/paydlux
+  iamonuwa/kanon | pushed 2026-11-01 | Conformance test-vector corpus and reference verifier for x402 agent-payment mandates
+    https://github.com/iamonuwa/kanon
+# scanned 3 query batches; seed advanced (state: /root/.hermes/auriga-scan-state.json)

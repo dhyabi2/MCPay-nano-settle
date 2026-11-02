@@ -428,3 +428,28 @@ BR-recurring layers are NOT exhausted like the settlement-MCP well was.
   checked & EXCLUDED (global/US-freelancer focus, out of JP/KR/BR/IN). State file advanced so the next run
   does not repeat stale queries (no-progress guard, corrective #3).
 - **Draft**: drafts/fc-2026-11-02-fifteenth-pass.md — 4 READY-TO-POST, same tested 2/2-RPC XNO verifier.
+
+## 19th-pass additions (2026-11-02) — BR PSP agent-skills layer (fresh query, outside the saturated settlement-MCP well)
+- **Two genuinely-new Brazil tier-3a claims** (owncheck-CLEAR, verified persisted owner=auriga), found by
+  rotating a fresh GitHub-API query (`brazil agent payments ai` → not the dry settlement-MCP well nor the
+  exhausted mandate grid):
+  1. **LuniumPay** (`github.com/LuniumPay/luniumpay`, owner Brasi, pays_in usdc, rowid 606) — Brazilian
+     company: "Build with AI. Accept Pix. Settle in stablecoins." Official `lunium-agent-skills` (7 skills) +
+     MCP registry entry + sandbox (API 1.45.2, pushed 2026-10-25, MIT). Agent-native no-human-approval path,
+     zero Nano. STRONGEST find: they already settle Pix to a USDT/USDC wallet and document crypto-to-Pix, so
+     a feeless XNO settle leg for the sub-cent tier is a natural extension of a rail that already moves money
+     to a wallet. Draft: drafts/fc-luniumpay-pix-xno-settle.md.
+  2. **ggCheckout** (`github.com/ggCheckout/ggcheckout-mcp`, Brazil org, pays_in card, rowid 607) — official
+     MCP (189 tools / 19 domains: products, checkouts, payments, billing, WhatsApp, members areas), TypeScript,
+     MIT, pushed 2026-10-29. Agent-native platform payments, zero Nano. Draft: drafts/fc-ggcheckout-mcp-xno-settle.md.
+- **Discovery method**: both surfaced from a fresh GitHub-API `sort=updated` query on BR agent-payments terms,
+  distinct from the seed grid — proving the localized/fresh-API BR query vein still produces even while the
+  mandate layer drifts global/US. auriga-scan (seed 13→16) itself returned only already-claimed (Root1V,
+  Divyansh-Singh05, R-Abinav, thisizaro, swetasingh9497-hash) or known global/US drift (probarion NEAR,
+  Mesher589 Stellar, sebastienrousseau London, niu602 Chinese) — honest end of that layer this run.
+- **Skipped**: Karan-Palan/khata (Mumbai UPI history MCP — read-only, no settlement seam); sujalmallick/
+  probity-ai (invoice fraud + human approval — no clean agent-settles-itself); bm-Shreyas05/sentinelai,
+  nigamgauri/fraudshield, YesitsSaish/T03-MuleTrace (fraud detection, no settlement); sivaramakrishnabevara/
+  agentx-india-2026 (hackathon platform, weak).
+- **Board**: card 297 → Blocked (18th-pass claims banked); new card 305 → Building (19th-pass LuniumPay+
+  ggCheckout).
