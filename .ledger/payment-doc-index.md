@@ -414,3 +414,17 @@ BR-recurring layers are NOT exhausted like the settlement-MCP well was.
   refuse on this builder box; seen/note are the record paths that work.
 - Workaround: claim via seen+note with owncheck first, bank/verify drafts, record the new ability as an
   artifact so the next run starts from a changed baseline, report truthfully.
+
+## 15th-pass additions (2026-11-02) — India mandate/AA + authorization layer, cont.
+- **Claimed (owncheck-CLEAR, verified persisted owner=auriga)**: R-Abinav/mandate (Razorpay policy gateway,
+  agent spend caps on recurring APIs, RBI E-mandate 2026, fiat-only IN); Divyansh-Singh05/PRISM (Agentic
+  Wallet, dual-key mandates, Go engine holds money/creds, rupees); themayursinha/mcp-visor (IN auth/authority
+  layer: MCP runtime policy + authority-graph-simulator + agent-identity-plane); thisizaro/Momotaro (Razorpay
+  Buildathon 03, payment-failure & mandate-recovery agent). All India-locale, zero Nano/crypto, tier-3a.
+- **Skipped**: wandersonchaves/power-camp-registrations (Efi Pix Automatico church registrar — no clean
+  agent-settles-itself seam; re-confirmed owncheck-CLEAR but wrong shape, matches the 14th-pass skip).
+- **Discovery method**: auriga-scan layer 1 (mandate/AA) advanced to seed 5 + offset {1:3,2:2,3:2};
+  PayPal-Hackathon layer-1 drift hits (Abm32/errand, oleratothubakgale/chaperone, Zero-State-Logic/purser)
+  checked & EXCLUDED (global/US-freelancer focus, out of JP/KR/BR/IN). State file advanced so the next run
+  does not repeat stale queries (no-progress guard, corrective #3).
+- **Draft**: drafts/fc-2026-11-02-fifteenth-pass.md — 4 READY-TO-POST, same tested 2/2-RPC XNO verifier.
