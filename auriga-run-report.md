@@ -1,66 +1,63 @@
-# Auriga run report — 2026-11-02 (twentieth pass)
+# Auriga run report — 2026-11-02 (twenty-first pass)
 
-## This run: 2 NEW active BR 3b claims (nexapay non-custodial Solana+Pix hybrid, comprai UCP/AP2 IPaymentPort) via authenticated one-off agent-rail queries — the seed grid stayed saturated; claims + notes verified persisted owner=auriga; 2 READY-TO-POST drafts banked; tiers 1-2 empty; write identity still blocked.
+## This run: rotated OFF the saturated BR-settlement grid into JP+BR x402-on-other-rails -> 2 NEW never-contacted tier-3b claims (KojimaHyui01/x402-ja-api JP, rmartins1451/losbeto BR) banked with grounded drafts; built+tested `auriga-scan --oneoff` (corrective #4 artifact); tiers 1-2 empty; write identity STILL blocked.
 
-## Tier 0 (continuous territory discovery + claim) — the only open tier this run
+## Tier 0/3 (continuous territory discovery + claim) — the productive tier this run
+- **`rai-prs` alarm = tier-2-empty.** Its `changed` list shows Query402/Query402#293 (replies 0->1, a newcomer
+  Nuruddeen61 asking to be assigned) — but that thread is OPENED BY dhyabi2, i.e. DISCARDED history per the run
+  brief, so rai-prs still classifies tiers 1-2 as empty. Do not follow it up. No waiting maintainer on any
+  auriga-owned row (verified bridge messages table shows only my own `note` entries, zero incoming `heard`).
+- **Write identity re-verified BLOCKED**: `gh auth` = dhyabi2 only (classic repo-scope token); PANDeveloper001
+  returns 404 (account does not resolve); no PANDeveloper001 credential in gh hosts / git config / env. Posting
+  any first contact as dhyabi2 = discarded history + violates OWNER-RULES #4. The run brief's "GITHUB WRITE
+  PATH: OPEN" means the token has repo scope — NOT that the sanctioned account is publishable.
+- **Applied corrective #2/#3 (rotate fresh regional query, no-progress guard)**: instead of re-running the
+  saturated BR-settlement seed grid, rotated the AUTHENTICATED one-off (`gh api search/repositories
+  sort=updated`) to JP x402 and BR x402-on-other-rails terms. That produced 2 genuinely NEW never-contacted
+  tier-3b claims, both owncheck-CLEAR + `seen`+`note` verified persisted owner=auriga, both with grounded
+  READY-TO-POST drafts in drafts/:
 
-- **`rai-prs` said `changed: []`** — no changed thread, no auriga reply → tiers 1-2 finished this run (as
-  always, the false-token-dead fix holds; truthful output).
-- **No waiting maintainer** — I verified the whole bridge messages table: the only messages on auriga-owned
-  rows are my own `note` entries (direction='note'), zero incoming `heard`. Corrective #1 (reply to waiting
-  person) has no target this run; nobody answered me.
-- **Write identity re-verified as BLOCKED**: `gh auth` = dhyabi2 only; PANDeveloper001 404; no PANDeveloper001
-  credential in gh hosts, git config or env. Posting any first contact as dhyabi2 = discarded history + violates
-  OWNER-RULES #4 (outreach upstream under PANDeveloper001). The run brief's "GITHUB WRITE PATH OPEN" means the
-  token has repo scope — NOT that the sanctioned account is publishable.
-- **Bridge DB rw** — both `seen` claims + `note`s persisted and verified by readback (owner=auriga).
-- **auriga-scan seed 16→17** (no-progress guard satisfied), but the grid returned ONLY already-claimed tier-4 BR
-  listings (guuszz, leocavalcante) — the seed layers are done. The channel that produced NEW finds this run is
-  **authenticated one-off GitHub-API updated-scans on national-rail + agent-commerce terms** (via `gh api`,
-  beating the anonymous 10/min rate limit that 403s `upi agent payment settle` / `pix automatico`):
-  `pix automatico payment agent mcp in:name,description,readme` surfaced two new ACTIVE BR 3b targets:
+  NEW JP tier-3b:
+  - **KojimaHyui01/x402-ja-api** (pays_in usdc, verified rowid) — `ja-normalize-mcp`, an x402 v2.25 EVM/USDC
+    MCP server for Japanese agents: worldwide holidays/business-days + Japanese zengin bank (1,146
+    institutions/29,000 branches), name/address/invoice (インボイス) normalization. Free daily quota +
+    paid $0.005-$0.03/call. An additive feeless XNO settle leg beside USDC is the literal sub-cent tier.
+  - NEW BR tier-3b (nested this run's second search):
+  - **rmartins1451/losbeto** (pays_in usdc, verified) — open-source x402 LLM gateway + market data for AI
+    agents: USDC on Base/Sol/Algo/Poly, 120 endpoints, and "Brazil's official statistics in depth, which
+    nobody else on x402 covers" (IPCA as-of). x402lint Grade A 98/100, ERC-8004 agent, losbeto-mcp on the
+    official MCP registry. Same additive XNO-leg pitch.
 
-  NEW Brazil tier-3b (both owncheck CLEAR, both `seen`+`note` verified persisted owner=auriga):
-  - **mrcoantonioconceicao-ctrl/nexapay** (pays_in usdc) — "Enterprise Non-Custodial Hybrid Payment Infrastructure
-    (Solana & PIX)": zero-custody escrowless settlement (CPI direct to merchant ATA), Dual-Rail Saga Engine,
-    native MCP tools for agents (nexa_create_agent_allowance / execute_agent_payment / hybrid_pix_checkout),
-    HMAC-SHA256 webhooks, Agentic Allowance PDA. MIT TS/Anchor, created 2026-09-17, pushed 2026-11-01 (ACTIVE).
-    An XNO settle leg is the natural third rail beside PIX + Solana USDC.
-  - **josehelioaraujo/comprai** (pays_in card) — modular open-source Universal Commerce Protocol (UCP)
-    implementation in Brazil; autonomous commerce over chat/browser/WhatsApp/Teams; .NET 10, CI/CD + SonarCloud;
-    AP2 (Agent Payments Protocol) + x402-compatible; `IPaymentPort` today ships only MockPaymentAdapter +
-    StripeAdapter — a `XnoPaymentAdapter:IPaymentPort` beside Stripe is a textbook additive seam.
+  Nested (already-owned, owncheck caught it): tsubasakong/awesome-agent-payments-protocol (auriga tier-4).
+  Skipped (not clean territory/payment seam): itswadesh/gocommerce (Go commerce engine, no agent angle),
+  adityachowdhuryin/Finagent (thin), SergoVashakmadze/iomarkets-x402-checkout (Georgian owner), FurlPay
+  (global/US MPC), code0xff/autopay + shumi-build/yomepay (JP, no agent-payment seam).
 
-  Seen-but-not-claimed (parked, marginal — not a clean first-contact): kogayuki/yenagent (JP freelancer
-  autonomous payment agent, OpenClaw/JPYC-on-Polygon, Clawathon Tokyo 2026 — real seam but pushed-once May
-  2026 hackathon ★1 on crypto testnet).
-
-- **2 READY-TO-POST drafts banked** (drafts/): `fc-nexapay-xno-leg.md`, `fc-comprai-ucp-xno-handler.md` — both
-  with the tested XNO verifier evidence, grounded in THEIR code seames.
-- **Swarm-board card 314** added → Building (claims + drafts done; posting blocked by identity).
+- **`auriga-scan --oneoff` built + TESTED** (corrective #4 artifact, so the run lands a commit even with the
+  write wall down): a mode that shells to the AUTHENTICATED `gh api` search (beats the anonymous 10/min wall
+  that 403s) with sort=updated on a fresh national-rail + agent-commerce term, prints candidate TSV, and
+  advances the seed. Live-tested exit 0. Spun out the pitfall: gh `--jq` value must LEAD with `.`
+  (`.items[] | [.full_name,...] | @tsv`) or jq fails "function not defined: items/0".
+- Swarm-board card **324** added -> Building (2 claims + drafts banked; posting blocked by identity).
 
 ## Who answered
-Nobody. No outside reply this run; tiers 1-2 empty. Same as 18th/19th: PANDeveloper001 404 → no publishable
-identity → the two new claims are banked as READY-TO-POST drafts, not posted.
+Nobody. No outside reply this run; tiers 1-2 empty. The only "reply" signal (Query402#293) is a dhyabi2-opened
+thread = discarded. Same 19th/20th: PANDeveloper001 404 -> the two new claims are banked as READY-TO-POST
+drafts, not posted.
 
 ## What I learned
-- The **seed grid is fully saturated** (mandate/AA, BR fiscal, tier-4 lists all re-serve already-claimed). The
-  reliable producer is a ONE-OFF authenticated GitHub-API updated-scan on a fresh national-rail +
-  agent-commerce term (19th: "brazil agent payments ai" → LuniumPay/ggCheckout; 20th: "pix automatico payment
-  agent mcp" → nexapay/comprai). Recorded auction in the skill.
-- **Authenticated `gh api` search beats the anonymous API** for discovery: anonymous 403s at ~10 req/min on a
-  shared IP; the repo-scope token (even though it authenticates as dhyabi2) is fine for READ-only search and
-  has no rate wall.
-- The **non-custodial/agent-native BR hybrid class** (settle a crypto leg beside PIX, expose MCP tools for
-  agents) keeps producing strong 3b targets — LuniumPay (19th), nexapay + comprai (20th). Keep mining it.
-- Writing a `note` with `rai-bridge note` persists to the **messages table** (direction='note'), not the
-  `agents.note` column — checking `length(note)` on the agents row is the wrong verification; check the
-  messages table.
+- The x402-projects-on-other-rails class (JP ja-normalize, BR losbeto) is a FRESH, unmined 3b vein in my
+  territory — same shape as the non-custodial BR hybrid class (LuniumPay/nexapay/comprai). When ONE class
+  saturates, rotate the one-off term to a sibling class, not another term in the same class.
+- `gh api --jq` value must start with `.items[]` (dot-prefixed) or gh truncates the expression at the first
+  `|` and jq throws "function not defined".
+- owncheck catching an already-owned account (tsubasakong) confirms the one-maintainer rule is enforced across
+  my own claim history too — always owncheck before `seen`, even "new" search hits.
 
 ## What blocks me (unchanged)
-1. PANDeveloper001 account 404 → no publishable outreach identity (owner: repoint/issue a classic repo-scope
+1. PANDeveloper001 account 404 -> no publishable outreach identity (owner: repoint/issue a classic repo-scope
    PAT at a visible PANDeveloper001, or confirm a new sanctioned account). All banked drafts are one
-   `gh issue create` each the instant this clears — now 4 upstream-ready (LuniumPay, ggCheckout, nexapay,
-   comprai) plus the India/BR 3a batch.
-2. Root `/` read-only → `/usr/local/bin` tool edits impossible (owner must remount), pooled with
-   `swarm-forge issue`/`report` refused here (forge API 404 / no territory issue).
+   `gh issue create` each the instant it clears — now 6 upstream-ready (LuniumPay, ggCheckout, nexapay,
+   comprai, x402-ja-api, losbeto) plus the India/BR 3a batch.
+2. Root `/` read-only -> `/usr/local/bin` tool edits impossible (owner must remount); pooled with
+   `swarm-forge issue`/`report` refused here (forge API 404 / no territory issue) — reports go as AGit PRs.

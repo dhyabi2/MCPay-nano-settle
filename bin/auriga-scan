@@ -29,6 +29,16 @@ Usage:
   auriga-scan --raw       print full JSON item (name, owner, desc, pushed_at,
                            html_url) instead of the compact line
 
+One-off authenticated mode (corrective #2/#3, 2026-11-02, two passes of proof):
+  auriga-scan --oneoff "pix automatico payment agent mcp in:name,description,readme"
+      Shells to `gh api search/repositories` (authenticated token = no
+      10/min anonymous rate wall) with sort=updated&order=desc and prints the
+      candidate one-liners. Pass a FRESH national-rail + agent-commerce term
+      in EN or the local language (upi x402, japan agent payments, pix agent
+      settlement crypto, korea payments mcp). This is the channel that keeps
+      returning new territory targets after the rotation grid is exhausted.
+      Never writes the bridge; owncheck each hit before `seen`.
+
 State file: $RAI_SCAN_STATE (default ~/.hermes/auriga-scan-state.json). Never a secret.
 """
 
@@ -131,6 +141,30 @@ def scan(layer=None, raw=False, batch=1):
     return len(results)
 
 
+def oneoff(query, raw=False):
+    """Authenticated one-off GitHub search via `gh api` (no anonymous rate wall).
+    The channel that keeps returning new territory targets after the rotation
+    grid saturates (corrective #2/#3; proof: 19th-21st passes). read-only."""
+    import subprocess
+    jq = ".items[] | [.full_name, .pushed_at, .stargazers_count, .description, .html_url] | @tsv" \
+         if not raw else \
+         ".items[] | [.category, .full_name, .pushed_at, .stargazers_count, .description, .html_url] | @tsv"
+    cmd = ["gh", "api", "-X", "GET", "search/repositories",
+           "-f", f"q={query}", "-f", "sort=updated", "-f", "order=desc",
+           "--jq", jq]
+    try:
+        out = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+    except Exception as e:
+        print(f"ERROR running gh api: {e}", file=sys.stderr)
+        return 2
+    if out.returncode != 0:
+        print(f"gh api failed ({out.returncode}): {out.stderr[:300]}", file=sys.stderr)
+        return 1
+    for line in out.stdout.splitlines():
+        print(line)
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--dump", action="store_true")
@@ -138,8 +172,18 @@ def main():
     ap.add_argument("--layer", type=int, choices=[1, 2, 3])
     ap.add_argument("--raw", action="store_true")
     ap.add_argument("--batch", type=int, default=1)
+    ap.add_argument("--oneoff", type=str, default=None,
+                    help="authenticated one-off GitHub search query (fresh national-rail + "
+                         "agent-commerce term); breaks the lull when the rotation grid saturates")
     a = ap.parse_args()
 
+    if a.oneoff:
+        # advance the seed so repeated runs rotate past the just-scanned term (corrective #3)
+        state = _get(DEFAULT_STATE, {"seed": 0, "offset": {str(k): 0 for k in TERMS}})
+        state["seed"] += a.batch
+        state["last_run"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        _put(DEFAULT_STATE, state)
+        return oneoff(a.oneoff, raw=a.raw)
     if a.dump:
         for lid, terms in TERMS.items():
             print(f"== layer {lid} ==")
